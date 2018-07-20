@@ -1,5 +1,4 @@
 body {
-	display: flex;
   	font-family: monospace;
   	width: 80%;
   	margin: auto;
@@ -7,10 +6,10 @@ body {
 
 #cover {
 	margin: auto;
-	height: 1vh;
 	background-image: url("img/cover.png");
 	background-size: 1vw 1vh;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 #cover h1 {
   text-align: right;
@@ -21,6 +20,5 @@ body {
 
 #intro {
 	display: block;
-	align-content: left;
 	width: 50%;
 }
