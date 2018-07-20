@@ -5,7 +5,7 @@ body {
   	margin: auto;
 }
 
-#cover {
+#cover h1{
 	margin: auto;
 	background-image: url("img/cover.png");
 	background-position: center;
