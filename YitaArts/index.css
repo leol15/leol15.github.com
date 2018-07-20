@@ -9,7 +9,7 @@ body {
 	margin: auto;
 	height: 1vh;
 	background-image: url("img/cover.png");
-	background-size: 1vw 1vh
+	background-size: 1vw 1vh;
 	background-position: center;
 }
 #cover h1 {
