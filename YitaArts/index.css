@@ -7,11 +7,10 @@ body {
 
 #cover {
 	margin: auto;
-	height: 1vh;
-	width: 100%
 	background-image: url("img/cover.png");
 	background-position: center;
 	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 #cover h1 {
   text-align: right;
