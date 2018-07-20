@@ -6,8 +6,7 @@ body {
 }
 
 #cover{
-	margin: auto;
-	background-image: url("img/cover.png");
+	background: url("img/cover.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
