@@ -24,7 +24,9 @@ h1 {
 }
 
 #intro {
+	margin-top: 20px;
 	display: flex;
+	width: 100%;
 }
 .intro_containers {
 	width: 50%;
@@ -32,7 +34,8 @@ h1 {
 }
 
 #intro_left {
-	background-color: rgb(203, 34, 112);
+
+	background-color: rgba(203, 234, 112, 0);
 }
 #intro_left p {
 	margin-top: 0px;
@@ -40,16 +43,16 @@ h1 {
 	font-size: 17px;
 	font-family: sans-serif;
 	max-height: 150px;
+	padding-right: 10px;
 	overflow: hidden;
 }
 #intro_left span {
-	background-color: rgba(40, 40, 40, 0.2);
 	font-family: monospace;
 	font-size: 34px;
-	color: white;
+
 }
 #intro_left img {
-	height: 150px;
+	height: 170px;
 	float: left;
 	padding-right: 10px;
 }
@@ -67,8 +70,28 @@ h1 {
 }
 
 
+#second {
+	width: 100%;
+	display: flex;
+}
+#saying {
+	display: flex;
+	width: 35%;
+	height: 170px;
+	background-color: gray;
+	background-color: rgb(209, 239, 21);
+}
+#saying p {
+	margin: auto;
+	color: black;
+}
+
+
 #advertise {
-	background-color: rgba(42, 21, 27, 0.9);
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 2.5%;
+	width: 65%;
 }
 
 
