@@ -1,13 +1,15 @@
 body {
-  font-family: monospace;
-  width: 80%;
-  margin: auto;
+	display: flex;
+  	font-family: monospace;
+  	width: 80%;
+  	margin: auto;
 }
 
 #cover {
 	margin: auto;
 	height: 1vh;
-	background-image: url("img/cover");
+	background-image: url("img/cover.png");
+	background-size: 1vw 1vh
 	background-position: center;
 }
 #cover h1 {
@@ -15,4 +17,10 @@ body {
   text-shadow:3px 2px green;
   font-family: cursive, sans-serif;
   color: rgb(0, 230, 20);
+}
+
+#intro {
+	display: block;
+	align-content: left;
+	width: 50%;
 }
