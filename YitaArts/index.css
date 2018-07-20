@@ -1,0 +1,12 @@
+body {
+  font-family: monospace;
+}
+#cover {
+  width: 1vw;
+}
+#cover h1 {
+  text-align: right;
+  text-shadow:3px 2px green;
+  font-family: cursive, sans-serif;
+  color: rgb(0, 230, 20);
+}
