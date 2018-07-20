@@ -67,9 +67,14 @@ h1 {
 }
 
 
+#advertise {
+	background-color: rgba(42, 21, 27, 0.7);
+}
+
 
 
 #enjoy {
+	background-color: rgb(255, 255, 255);
 	margin-top: 20px;
 	margin-bottom: 40px;
 	text-align: center;
