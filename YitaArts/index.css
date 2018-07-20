@@ -1,10 +1,13 @@
 body {
   font-family: monospace;
+  width: 80%;
+  margin: auto;
 }
-#cover img{
-	position: absolute;
-	z-index: 0;
-  	width: 1vw;
+
+#cover {
+	margin: auto;
+	background-image: url("img/cover");
+	background-position: center;
 }
 #cover h1 {
   text-align: right;
