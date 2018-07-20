@@ -1,26 +1,111 @@
 body {
-	display: 
+	background-color: rgb(20, 20, 20);
   	font-family: monospace;
   	width: 80%;
   	margin: auto;
+
+	color: white; 
 }
 
 #cover{
-	min-height: 800px;
 	background: url("img/cover.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	z-index: -1;
+	height: 100vh;
 }
 h1 {
-  text-align: right;
-  text-shadow:3px 2px green;
-  font-family: cursive, sans-serif;
-  color: rgb(0, 230, 20);
+	font-size: 3em;
+  	text-align: right;
+  	text-shadow:3px 2px green;
+  	font-family: cursive, sans-serif;
+  	color: rgb(0, 230, 20);
+  	background-color: rgba(40, 40, 40, 0.6);
 }
 
 #intro {
-	display: block;
+	display: flex;
+}
+.intro_containers {
 	width: 50%;
+	min-height: 150px;
+}
+
+#intro_left {
+	background-color: rgb(203, 34, 112);
+}
+#intro_left p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 17px;
+	font-family: sans-serif;
+	max-height: 150px;
+	overflow: hidden;
+}
+#intro_left span {
+	background-color: rgba(40, 40, 40, 0.2);
+	font-family: monospace;
+	font-size: 34px;
+	color: white;
+}
+#intro_left img {
+	height: 150px;
+	float: left;
+	padding-right: 10px;
+}
+
+#intro_right {
+	background-color: rgb(90, 129, 179);
+
+}
+#intro_right p{
+	font-family: fantasy;
+	font-size: 3.2em;
+	color: rgb(0, 255, 0);
+	letter-spacing: 5px;
+	text-align: center;
+}
+
+
+
+
+#enjoy {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	text-align: center;
+	text-decoration: underline;
+	font-size: 5em;
+	letter-spacing: 10 px;
+}
+#e1 {
+	color: red;
+}
+#e2 {
+	color: green;
+}
+#e3 {
+	color: blue;
+}
+#e4 {
+	color: yellow;
+}
+#e5 {
+	color: gray;
+}
+#e6 {
+	color: orange;
+}
+
+
+
+.imgs {
+    margin: 5px;
+    border: 2px groove gold;
+    float: left;
+    width: 320px;
+    height: 410px;
+}
+.imgs img {
+	width: 100%;
+	height: auto;
 }
