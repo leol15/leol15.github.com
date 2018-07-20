@@ -1,4 +1,5 @@
 body {
+	display: 
   	font-family: monospace;
   	width: 80%;
   	margin: auto;
@@ -6,8 +7,9 @@ body {
 
 #cover {
 	margin: auto;
+	height: 1vh;
+	width: 100%
 	background-image: url("img/cover.png");
-	background-size: 1vw 1vh;
 	background-position: center;
 	background-repeat: no-repeat;
 }
