@@ -120,6 +120,17 @@ h1 {
 	width: 20%;
 	height: auto;
 }
+#advertise ul a:link, #advertise ul a:visited{
+	line-height: 20px;
+	text-decoration: none;
+	color: rgb(255, 255, 0);
+}
+#advertise a:before {
+	content: "> ";
+}
+#advertise a:after {
+	content: " <";
+}
 
 
 
