@@ -121,15 +121,15 @@ h1 {
 	height: auto;
 }
 #advertise ul a:link, #advertise ul a:visited{
-	line-height: 20px;
+	line-height: 28px;
 	text-decoration: none;
 	color: rgb(255, 255, 0);
 }
-#advertise a:before {
-	content: "> ";
-}
-#advertise a:after {
-	content: " <";
+#advertise a:hover:after{
+	font-weight: bold;
+	text-decoration: underline;
+	color: red;
+	content: "  Thank You!";
 }
 
 
