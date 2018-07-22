@@ -3,9 +3,43 @@
 <head>
 	<title>Leo's Page</title>
 	<meta charset="utf-8">
+	<!--Device Friendly-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!--Google Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 </head>
 <body>
+	<div id="header">
+		<div id="center_mark">The L</div>
+		
+	</div>
 
+
+
+	<script type="text/javascript">
+		var headerCenterMarkEl = document.getElementById("center_mark");
+		var FC_headerCenterMarkEl = function() {
+			var el = document.createElement("div");
+			el.id = "add";
+			//el.style.position = "absolute";
+			//el.style.left = "40vw";
+			el.style.textAlign = "center";
+			el.style.backgroundColor = "#C8B3F4";
+			el.style.padding = "10px";
+			el.style.borderRadius = "10px";
+			el.textContent = "Welcome to my world";
+			el.style.opacity = "1";
+			document.body.appendChild(el);
+
+		};
+		var rem_FC_headerCenterMarkEl = function() {
+			var el = document.getElementById("add");
+			document.body.removeChild(el);
+		};
+		headerCenterMarkEl.addEventListener("mouseover", FC_headerCenterMarkEl);
+		headerCenterMarkEl.addEventListener("mouseout", rem_FC_headerCenterMarkEl);
+	</script>
 </body>
 </html>
