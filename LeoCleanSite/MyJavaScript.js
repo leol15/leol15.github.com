@@ -15,7 +15,7 @@ var removeText = function() {
 };
 
 
-var headerCenterMarkEl = document.getElementById("center_mark");
 var welText = "Welcome to my world";
-headerCenterMarkEl.addEventListener("mouseover", informText.bind(null, welText));
+var headerCenterMarkEl = document.getElementById("center_mark");
+headerCenterMarkEl.addEventListener("touchstart", informText.bind(null, welText));
 
