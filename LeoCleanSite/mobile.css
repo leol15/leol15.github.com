@@ -1,8 +1,8 @@
 <!--mobile first-->
-* {
-	box-sizing: border-box;
-}
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
+	* {
+		box-sizing: border-box;
+	}
 	body {
 		margin: 0 0 0 0;
 		font-family: Montserrat;
@@ -13,7 +13,7 @@
 	#header {
 		background-color: #5B1BDF;
 		height: 110px;
-		width: 100%;
+		width: 100vw;
 		display: flex;
 	}
 	#center_mark {
