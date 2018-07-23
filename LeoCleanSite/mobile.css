@@ -24,19 +24,80 @@ body {}
 	}
 
 	#left_icon {
-		float: left;
-
+		background-color: #D0BEFF;
 	}
 
 	#center_mark {
-		max-height: 80%;
-		font-size: 40px;
 		margin: auto;
-		padding-left: 10px;
-		padding-right: 10px;
 		border-left: 5px solid grey;
 		border-right: 5px solid grey;
 		border-radius: 10px;
+		font-size: 40px;
+		padding-left: 5px;
+		padding-right: 5px;
+		
+	}
+	#center_mark a:link, #center_mark a:visited {
+		text-decoration: none;
+	}
+
+	#center_mark:hover {
+		animation-name: centerM;
+		animation-duration: 2s;
+	}
+	#center_mark a:hover {
+		animation-name: centerM_a;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-direction: alternate;
+	}
+	
+	@keyframes centerM {
+		0% {
+			padding-left: 5px;
+			padding-right: 5px;
+			border-radius:10px;
+		}
+		50% {
+			padding-left: 35px;
+			padding-right: 35px;
+			border-radius: 25px;
+		}
+		100% {
+			padding-left: 5px;
+			padding-right: 5px;
+			border-radius: 10px;
+		}
+	}
+	@keyframes centerM_a {
+		0% {
+			color: white;
+		}
+		12.5% {
+			color: #2FFF24;
+		}
+		25% {
+			color: #D9FF24;
+		}
+		37.5% {
+			color: #FFDD24;
+		}
+		50% {
+			color: #FFB324;	
+		}
+		62.5% {
+			color: #FF2A24;
+		}
+		75% {
+			color: #FF24CF;
+		}
+		87.5% {
+			color: #6B3DFF;
+		}
+		100% {
+			color: #33A2FF;
+		}
 	}
 
 	#inform_box {
@@ -54,6 +115,28 @@ body {}
 		border-radius: 20px;
 		padding-left: 10px;
 		padding-right: 10px;
+
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
 	}
+
+	@keyframes rotY90 {
+		from {
+			transform: rotateY(0deg);
+		}
+		to {
+			transform: rotateY(90deg);
+		}
+	}
+	@keyframes rotY-90 {
+		from {
+			transform: rotateY(90deg);
+		}
+		to {
+			transform: rotateY(0deg);
+		}
+	}
+
 }
+
 
