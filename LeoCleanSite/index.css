@@ -31,5 +31,21 @@ body {
 
 	text-align: center;
 	font-weight: bold;
+	padding-top: 5px;
 }
 
+
+#inform_box {
+	width: 100%;
+	position: fixed;
+	bottom: 3vh;
+	display: flex;
+}
+#inform_content {
+	margin: auto;
+	text-align: center;
+	background-color: #C8B3F4;
+	padding: 20px;
+	border-radius: 20px;
+	line-height: 0px;
+}
