@@ -20,7 +20,7 @@ body {}
 	#header {
 		display: flex;
 		background-color: #5B1BDF;
-		height: 10vh;
+		min-height: 70px;
 	}
 
 	#left_icon {
