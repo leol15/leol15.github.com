@@ -1,31 +1,28 @@
 <!--mobile first-->
+* {
+	box-sizing: border-box;
+}
 @media only screen and (max-width: 700px) {
 	body {
 		margin: 0 0 0 0;
 		font-family: Montserrat;
-		background-color: 
 		background-color: #D0CFD3;
 		color: white;
 		font-size: 2em;
 	}
 	#header {
 		background-color: #5B1BDF;
-		height: 18vh;
-		max-height: 60px;
-		min-height: 40px;
+		height: 110px;
 		width: 100%;
-
 		display: flex;
 	}
 	#center_mark {
 		margin: auto;
-		
 		border-left: 6px double #FFFFFF;
 		border-right: 6px double #FFFFFF;
 		border-radius: 10px;
-
 		height: 80%;
-		width: 15%;
+		width: 30%;
 
 		text-align: center;
 		font-weight: bold;
@@ -36,7 +33,7 @@
 	#inform_box {
 		width: 100%;
 		position: fixed;
-		bottom: 5vh;
+		bottom: 40px;
 		display: flex;
 	}
 	#inform_content {
