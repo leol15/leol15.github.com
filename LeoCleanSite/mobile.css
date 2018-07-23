@@ -5,6 +5,7 @@ body {}
 #center_mark {}
 #inform_box {}
 #inform_content {}
+#left_icon {}
 
 @media only screen and (max-width: 900px) {
 	* {
@@ -13,18 +14,23 @@ body {}
 		color: white;
 	}
 	body {
-		background-color: #D0CFD3;
 		margin: 0px;
+		background-color: #D0CFD3;
 	}
 	#header {
 		display: flex;
 		background-color: #5B1BDF;
-		min-height: 120px;
+		height: 10vh;
+	}
+
+	#left_icon {
+		float: left;
+
 	}
 
 	#center_mark {
 		max-height: 80%;
-		font-size: 60px;
+		font-size: 40px;
 		margin: auto;
 		padding-left: 10px;
 		padding-right: 10px;
@@ -41,7 +47,7 @@ body {}
 	}
 
 	#inform_content {
-		font-size: 40px;
+		font-size: 30px;
 		margin: auto;
 		text-align: center;
 		background-color: #C8B3F4;
