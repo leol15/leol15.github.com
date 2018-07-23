@@ -1,5 +1,13 @@
 
 var informText = function(txt) {
+	//animate box first
+	var box = document.getElementById("center_mark");
+	box.style.animationName = "centerM";
+	box.style.animationDuration = "2s";
+	window.setTimeout(function() {
+		box.style.animationName = "";
+	}, 2000);
+
 	var el = document.getElementById("inform_content");
 	el.style.animationName = "rotY90";
 	window.setTimeout(function() {el.textContent = txt; 
