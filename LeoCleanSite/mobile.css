@@ -23,6 +23,7 @@
 		display: flex;
 	}
 	#left_icon p {
+		user-select: none;
 		font-weight: bold;
 		font-size: 2em;
 		text-align: center;
@@ -85,6 +86,7 @@
 		padding-right: 15px;
 	}
 	#center_mark span {
+		user-select: none;
 		animation-name: centerM_a;
 		animation-duration: 4s;
 		animation-iteration-count: infinite;
@@ -175,6 +177,7 @@
 		display: flex;
 	}
 	#inform_content {
+		user-select: none;
 		font-size: 30px;
 		margin: auto;
 		text-align: center;
