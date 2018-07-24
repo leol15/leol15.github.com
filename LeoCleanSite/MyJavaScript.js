@@ -1,18 +1,21 @@
 
-var informText = function(txt) {
-	//animate box first
+
+//animate box first
+var headerBoxChange = function() {
 	var box = document.getElementById("center_mark");
 	box.style.animationName = "centerM";
 	box.style.animationDuration = "2s";
 	window.setTimeout(function() {
 		box.style.animationName = "";
-	}, 2000);
+	}, 2000);	
+};
 
+var informText = function(txt) {
 	var el = document.getElementById("inform_content");
 	el.style.animationName = "rotY90";
 	window.setTimeout(function() {el.textContent = txt; 
 		el.style.animationName = "rotY-90";}, 1000);
-	window.setTimeout(function() {removeText()}, 3500);
+	window.setTimeout(function() {removeText()}, 2800);
 };
 var removeText = function() {
 	var el = document.getElementById("inform_content");
@@ -24,7 +27,9 @@ var removeText = function() {
 //header touch event
 var welText = "Welcome to my world";
 var headerCenterMarkEl = document.getElementById("center_mark");
-headerCenterMarkEl.addEventListener("touchstart", informText.bind(null, welText));
+headerCenterMarkEl.addEventListener("touchend", informText.bind(null, welText));
+headerCenterMarkEl.addEventListener("touchend", headerBoxChange);
+headerCenterMarkEl.firstChild.addEventListener("touchstart", headerBoxChange);
 
 //left icon touch event
 var leftIconBox = document.getElementById("left_icon");
@@ -53,3 +58,9 @@ var leftIconClicked = function() {
 	}
 }; 
 leftIconBox.addEventListener("touchend", leftIconClicked);
+
+
+//float button
+var floatBClicked = function() {
+	informText("What is going on?");
+}; 
