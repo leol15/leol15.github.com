@@ -17,6 +17,7 @@
 		min-height: 60px;
 	}
 
+
 	#left_icon {
 		padding: 0px 5px;
 		display: flex;
@@ -70,7 +71,6 @@
 		top: 10px;
 		transition: all 0.5s;
 	}
-
 
 
 
@@ -177,6 +177,24 @@
 			transform: rotateY(0deg);
 		}
 	}
+
+	#floatB {
+		background-color: #1E025F;
+		color: white;
+		font-size: 2em;
+		width: 40px;
+		height: 40px;
+		border: 1PX solid white;
+		border-radius: 60px;
+		position: fixed;
+		left: 20px;
+		bottom: 20px;
+		box-shadow: 3px 3px 4px purple;
+	}
+
+
+
+
 
 }
 
