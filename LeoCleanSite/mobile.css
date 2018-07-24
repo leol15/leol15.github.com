@@ -20,11 +20,11 @@ body {}
 	#header {
 		display: flex;
 		background-color: #5B1BDF;
-		min-height: 70px;
+		min-height: 60px;
 	}
 
 	#left_icon {
-		padding: 0px 10px;
+		padding: 0px 5px;
 		display: flex;
 	}
 	#left_icon p {
