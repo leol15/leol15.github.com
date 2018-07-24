@@ -23,12 +23,15 @@
 		display: flex;
 	}
 	#left_icon p {
-		user-select: none;
 		font-weight: bold;
 		font-size: 2em;
 		text-align: center;
 		margin: auto;
 	}
+	#left_icon p::selection {
+		background-color: red;
+	}
+
 	.left_icon_on {
 		background-color: #5B1BDF; 
 		transition: all 1s;
@@ -222,16 +225,15 @@
 
 	.hiddenBs {
 		padding: 0px;
-		font-size: 2em;
+		font-size: 1.5em;
 		border-radius: 50%;
-		box-shadow: 1px 2px 1px purple; 
-		position: fixed;
+		box-shadow: 2px 2px 2px purple; 
 		background-color: #5B1BDF;
 		color: white;
-		border: 2px solid white;
-		width: 45px;
-		height: 45px;
-		left: 15px;
+		position: fixed;
+		left: 20px;
+		width: 40px;
+		height: 40px;
 		animation-duration: 0.7s;
 		animation-fill-mode: forwards;
 		opacity: 0;

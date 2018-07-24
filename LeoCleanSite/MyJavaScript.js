@@ -100,6 +100,7 @@ var floatBClicked = function() {
 	if(fbEl.className == "floatB_on") {
 		fbEl.className = "floatB_off";
 		hideHBs();
+		
 		window.clearTimeout(autoClose);
 	} else {
 		fbEl.className = "floatB_on";
