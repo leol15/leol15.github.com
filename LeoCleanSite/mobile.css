@@ -24,8 +24,25 @@ body {}
 	}
 
 	#left_icon {
-		background-color: #D0BEFF;
+		padding: 0px 10px;
+		display: flex;
 	}
+	.left_icon_on {
+		transition: all 1s;
+		background-color: #5B1BDF; 
+	}
+	.left_icon_off {
+		transition: all 1s;
+		background-color: #D0BEFF;
+
+	}
+
+	#left_icon p {
+		font-size: 2em;
+		text-align: center;
+		margin: auto;
+	}
+
 
 	#center_mark {
 		margin: auto;

@@ -19,7 +19,6 @@ var removeText = function() {
 	el.style.animationName = "rotY90";
 	window.setTimeout(function() {el.textContent = "leo";
 	el.style.animationName = "rotY-90";}, 1000);
-	//window.setTimeout(function() {el.style.animationName = ""}, 1000);
 };
 
 
@@ -27,3 +26,12 @@ var welText = "Welcome to my world";
 var headerCenterMarkEl = document.getElementById("center_mark");
 headerCenterMarkEl.addEventListener("touchstart", informText.bind(null, welText));
 
+var leftIconBox = document.getElementById("left_icon");
+var leftIconClicked = function() {
+	if(leftIconBox.className == "left_icon_on") {
+		leftIconBox.className = "left_icon_off";
+	} else {
+		leftIconBox.className = "left_icon_on";
+	}
+}; 
+leftIconBox.addEventListener("touchend", leftIconClicked);
