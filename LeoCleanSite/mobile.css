@@ -1,12 +1,5 @@
 <!--mobile first-->
 * {}
-body {}
-#header {}
-#center_mark {}
-#inform_box {}
-#inform_content {}
-#left_icon {}
-#floatB {}
 
 @media only screen and (max-width: 900px) {
 	* {
@@ -164,7 +157,7 @@ body {}
 		padding-left: 10px;
 		padding-right: 10px;
 
-		animation-duration: 1s;
+		animation-duration: 0.8s;
 		animation-fill-mode: forwards;
 	}
 
