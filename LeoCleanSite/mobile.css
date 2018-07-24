@@ -11,11 +11,11 @@ body {}
 	* {
 		box-sizing: content-box;
 		font-family: Montserrat;
-		color: white;
 	}
 	body {
 		margin: 0px;
 		background-color: #D0CFD3;
+		color: white;
 	}
 	#header {
 		display: flex;
@@ -30,10 +30,12 @@ body {}
 	.left_icon_on {
 		transition: all 1s;
 		background-color: #5B1BDF; 
+		color: white;
 	}
 	.left_icon_off {
 		transition: all 1s;
 		background-color: #D0BEFF;
+		color: black;
 
 	}
 
