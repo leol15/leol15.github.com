@@ -31,13 +31,21 @@ var leftIconBox = document.getElementById("left_icon");
 var li_a = document.getElementById("li_a");
 var li_b = document.getElementById("li_b");
 var li_c = document.getElementById("li_c");
+var pEl = document.getElementById("left_icon_p");
 var leftIconClicked = function() {
 	if(leftIconBox.className == "left_icon_on") {
+		//p tag rotation
+		pEl.style.transition = "all 1s";
+		pEl.style.transform = "rotateZ(180deg) rotateY(180deg)";
+		//bg cl
 		leftIconBox.className = "left_icon_off";
+		//span location
 		li_a.className = "li_a_off";
 		li_b.className = "li_b_off";
 		li_c.className = "li_c_off";
 	} else {
+		pEl.style.transition = "all 1s";
+		pEl.style.transform = "rotateZ(0deg) rotateY(180deg)";
 		leftIconBox.className = "left_icon_on";
 		li_a.className = "li_a_on";
 		li_b.className = "li_b_on";

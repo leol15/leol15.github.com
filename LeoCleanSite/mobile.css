@@ -28,6 +28,7 @@ body {}
 		display: flex;
 	}
 	#left_icon p {
+		font-weight: bold;
 		font-size: 2em;
 		text-align: center;
 		margin: auto;
@@ -43,11 +44,27 @@ body {}
 	#li_a, #li_c {
 		position: relative;
 	}
-	.li_a_on {
-		color: white;
+	.li_a_off {
+		color: black;
 		left: 19px;
 		bottom: 0px;
-		transition: all 1s;
+		transition: all 0.5s;
+	}
+	.li_b_off {
+		color: black;
+		transition: all 1.2s;
+	}
+	.li_c_off {
+		color: black;
+		right: 19px;
+		top: 0px;
+		transition: all 1.7s;
+	}
+	.li_a_on {
+		color: white;
+		left: 11px;
+		bottom: 10px;
+		transition: all 1.5s;
 	}
 	.li_b_on {
 		color: white;
@@ -55,25 +72,9 @@ body {}
 	}
 	.li_c_on {
 		color: white;
-		right: 19px;
-		top: 0px;
-		transition: all 1s;
-	}
-	.li_a_off {
-		color: black;
-		left: 11px;
-		bottom: 10px;
-		transition: all 1s;
-	}
-	.li_b_off {
-		color: black;
-		transition: all 1s;
-	}
-	.li_c_off {
-		color: black;
 		right: 11px;
 		top: 10px;
-		transition: all 1s;
+		transition: all 0.5s;
 	}
 
 
