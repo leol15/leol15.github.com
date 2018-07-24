@@ -1,4 +1,5 @@
-
+//global variables
+var autoClose;
 
 //animate box first
 var headerBoxChange = function() {
@@ -37,30 +38,47 @@ var li_a = document.getElementById("li_a");
 var li_b = document.getElementById("li_b");
 var li_c = document.getElementById("li_c");
 var pEl = document.getElementById("left_icon_p");
+
+var leftIconOn = function() {
+	pEl.style.transition = "all 1s";
+	pEl.style.transform = "rotateZ(0deg) rotateY(180deg)";
+	leftIconBox.className = "left_icon_on";
+	li_a.className = "li_a_on";
+	li_b.className = "li_b_on";
+	li_c.className = "li_c_on";
+};
+var leftIconOff = function() {
+	//p tag rotation
+	pEl.style.transition = "all 1s";
+	pEl.style.transform = "rotateZ(180deg) rotateY(180deg)";
+	//bg cl
+	leftIconBox.className = "left_icon_off";
+	//span location
+	li_a.className = "li_a_off";
+	li_b.className = "li_b_off";
+	li_c.className = "li_c_off";
+};
 var leftIconClicked = function() {
 	if(leftIconBox.className == "left_icon_on") {
-		//p tag rotation
-		pEl.style.transition = "all 1s";
-		pEl.style.transform = "rotateZ(180deg) rotateY(180deg)";
-		//bg cl
-		leftIconBox.className = "left_icon_off";
-		//span location
-		li_a.className = "li_a_off";
-		li_b.className = "li_b_off";
-		li_c.className = "li_c_off";
+		leftIconOff();
 	} else {
-		pEl.style.transition = "all 1s";
-		pEl.style.transform = "rotateZ(0deg) rotateY(180deg)";
-		leftIconBox.className = "left_icon_on";
-		li_a.className = "li_a_on";
-		li_b.className = "li_b_on";
-		li_c.className = "li_c_on";
+		leftIconOn();
 	}
 }; 
 leftIconBox.addEventListener("touchend", leftIconClicked);
 
 
 //float button
+
 var floatBClicked = function() {
-	informText("What is going on?");
+	var fbEl = document.getElementById("floatB");
+	if(fbEl.className == "floatB_on") {
+		fbEl.className = "floatB_off";
+		window.clearTimeout(autoClose);
+	} else {
+		fbEl.className = "floatB_on";
+		window.clearTimeout(autoClose);
+		autoClose = window.setTimeout(function() {fbEl.className="floatB_off"}, 5000);
+	}
 }; 
+

@@ -17,7 +17,7 @@
 		min-height: 60px;
 	}
 
-
+	/*drawing and animating left icon*/
 	#left_icon {
 		padding: 0px 5px;
 		display: flex;
@@ -74,7 +74,7 @@
 
 
 
-
+	/*drawing center icon*/
 	#center_mark {
 		font-size: 40px;
 		margin: auto;
@@ -83,7 +83,6 @@
 		border-radius: 10px;
 		padding-left: 15px;
 		padding-right: 15px;
-		
 	}
 	#center_mark span {
 		animation-name: centerM_a;
@@ -93,7 +92,7 @@
 		animation-direction: alternate;
 	}
 
-
+	/*animating center and left icon*/
 	@keyframes centerM {
 		0% {
 			padding-left: 15px;
@@ -141,26 +140,6 @@
 		}
 	}
 
-	#inform_box {
-		width: 100vw;
-		position: fixed;
-		bottom: 20px;
-		display: flex;
-	}
-
-	#inform_content {
-		font-size: 30px;
-		margin: auto;
-		text-align: center;
-		background-color: #C8B3F4;
-		border-radius: 20px;
-		padding-left: 10px;
-		padding-right: 10px;
-
-		animation-duration: 0.8s;
-		animation-fill-mode: forwards;
-	}
-
 	@keyframes rotY90 {
 		0% {
 			transform: rotateY(0deg);
@@ -178,19 +157,93 @@
 		}
 	}
 
+	/*content style*/
+	#content {
+		padding: 10px;
+	}
+
+
+
+
+
+
+	/*prompt message*/
+	#inform_box {
+		width: 100vw;
+		position: fixed;
+		bottom: 20px;
+		display: flex;
+	}
+	#inform_content {
+		font-size: 30px;
+		margin: auto;
+		text-align: center;
+		background-color: #C8B3F4;
+		border-radius: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		animation-duration: 0.8s;
+		animation-fill-mode: forwards;
+	}
+
+	/*float button*/
 	#floatB {
-		background-color: #1E025F;
-		color: white;
+		padding: 0px;
 		font-size: 2em;
+		border-radius: 50%;
+		position: fixed;
+		box-shadow: 1px 2px 3px purple; 
+	}
+	.floatB_on {
+		background-color: #5B1BDF;
+		color: white;
+		border: 2px solid white;
+		opacity: 1;
+		width: 50px;
+		height: 50px;
+		left: 15px;
+		bottom: 15px;
+		transition: all 0.2s;
+	}
+	.floatB_off {
+		background-color: white;
+		color: #5B1BDF;
+		border: 2px solid #5B1BDF;
+		opacity: 0.5;
 		width: 40px;
 		height: 40px;
-		border: 1PX solid white;
-		border-radius: 60px;
-		position: fixed;
 		left: 20px;
 		bottom: 20px;
-		box-shadow: 3px 3px 4px purple;
+		transition: all 0.2s;
 	}
+
+	.hiddenBs {
+		padding: 0px;
+		font-size: 2em;
+		border-radius: 50%;
+		box-shadow: 1px 2px 1px purple; 
+		position: fixed;
+		background-color: #5B1BDF;
+		color: white;
+		border: 2px solid white;
+		width: 45px;
+		height: 45px;
+		left: 15px;
+	}
+	#hB1 {
+		bottom: 80px;
+		display: none;
+	}
+
+	@keyframes showBt {
+		from {
+			display: none;
+		}
+		to {
+			display: block;
+		}
+	}
+
 
 
 
