@@ -69,16 +69,44 @@ leftIconBox.addEventListener("touchend", leftIconClicked);
 
 
 //float button
+var clearHBNames = function() {
+	var hBs = document.querySelectorAll("#hiddenBsDiv button");
+	for(var n=0; n<hBs.length; n++) {
+ 		hBs[n].style.animationName = "";
+ 	}
+ 	console.log("names cleared");
+};
+var showHBs = function() {
+ 	var hBs = document.querySelectorAll("#hiddenBsDiv button");
+ 	for(var n=0; n<hBs.length; n++) {
+ 		hBs[n].style.display = "inline";
+ 		hBs[n].style.animationName = "showBt";
+ 		hBs[n].style.animationDirection = "normal";
+ 	}
+};
+
+var hideHBs = function() {
+ 	var hBs = document.querySelectorAll("#hiddenBsDiv button");
+ 	for(var n=0; n<hBs.length; n++) {
+ 		hBs[n].style.animationDirection = "reverse";
+ 		hBs[n].style.animationName = "showBt";
+ 		hBs[n].style.display = "none";
+ 	}	
+ 	clearHBNames();
+};
 
 var floatBClicked = function() {
 	var fbEl = document.getElementById("floatB");
 	if(fbEl.className == "floatB_on") {
 		fbEl.className = "floatB_off";
+		hideHBs();
 		window.clearTimeout(autoClose);
 	} else {
 		fbEl.className = "floatB_on";
+		showHBs();
+
 		window.clearTimeout(autoClose);
-		autoClose = window.setTimeout(function() {fbEl.className="floatB_off"}, 5000);
+		autoClose = window.setTimeout(function() {fbEl.className="floatB_off"; hideHBs();}, 5000);
 	}
 }; 
 
