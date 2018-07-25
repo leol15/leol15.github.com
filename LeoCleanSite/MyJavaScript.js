@@ -1,5 +1,4 @@
 //global variables
-var autoClose;
 
 //animate box first
 var headerBoxChange = function() {
@@ -61,17 +60,33 @@ var leftIconOff = function() {
 	li_b.className = "li_b_off";
 	li_c.className = "li_c_off";
 };
+var menuOn = function() {
+	var el = document.querySelectorAll("#menu li");
+	for(var i=0; i<el.length; i++) {
+		el[i].className = "menuOn";
+		console.log(el[i]);
+	}
+};
+var menuOff = function() {
+	var el = document.querySelectorAll("#menu li");
+	for(var i=0; i<el.length; i++) {
+		el[i].className = "menuOff";
+	}
+};
 var leftIconClicked = function() {
 	if(leftIconBox.className == "left_icon_on") {
 		leftIconOff();
+		menuOff();
 	} else {
 		leftIconOn();
+		menuOn();
 	}
 }; 
 leftIconBox.addEventListener("touchend", leftIconClicked);
 
 
 //float button
+var autoClose;
 var showHbs = function() {
 	var hBs = document.querySelectorAll("#hiddenBsDiv button");
 	for (var i=0; i<hBs.length; i++) {

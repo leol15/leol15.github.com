@@ -160,8 +160,40 @@
 		}
 	}
 
+
+	/*dropdown menu*/
+	#menuDiv {
+		z-index: -1;
+		position: fixed;
+		right: 1vw;
+		width: 82vw;
+		font-size: 1.5em;
+	}
+	#menuDiv li {
+		z-index: 1;
+		position: relative;
+		left: -25px;
+		background-color: #5B29FB;
+		list-style-type: none;
+		text-align: center;
+		margin: 15px 0px;
+		padding: 5px 0px;
+		border-radius: 20px;
+	}
+	.menuOn {
+		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+		transition: all 0.5s;
+	}
+	.menuOff {
+		transform: translate(-48vw, 20px) rotateX(70deg) rotateY(0deg) rotateZ(90deg);
+		opacity: 0.3;
+		transition: all 0.5s;
+	}
+
+
 	/*content style*/
 	#content {
+		margin-left: 10vw;
 		padding: 10px;
 		color: black;
 	}
