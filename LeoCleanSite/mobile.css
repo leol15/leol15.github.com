@@ -23,13 +23,11 @@
 		display: flex;
 	}
 	#left_icon p {
+		user-select: none;
 		font-weight: bold;
 		font-size: 2em;
 		text-align: center;
 		margin: auto;
-	}
-	#left_icon p::selection {
-		background-color: red;
 	}
 
 	.left_icon_on {
