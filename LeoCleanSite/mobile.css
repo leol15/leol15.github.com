@@ -176,6 +176,8 @@
 		position: fixed;
 		bottom: 20px;
 		display: flex;
+		z-index: 4;
+		opacity: 0.9;
 	}
 	#inform_content {
 		user-select: none;
