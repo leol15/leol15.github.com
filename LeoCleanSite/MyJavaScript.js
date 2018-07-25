@@ -12,18 +12,24 @@ var headerBoxChange = function() {
 
 var infTO1, infTO2;
 var informText = function(txt) {
+	var box = document.getElementById("inform_box");
 	var el = document.getElementById("inform_content");
 	el.style.animationName = "rotY90";
 	window.clearTimeout(infTO1);
 	window.clearTimeout(infTO2);
-	window.setTimeout(function() {el.textContent = txt; 
+	window.setTimeout(function() {
+		el.textContent = txt;
+		box.style.zIndex = "4"; 
 		el.style.animationName = "rotY-90";}, 1000);
 	infTO1 = window.setTimeout(function() {removeText()}, 2800);
 };
 var removeText = function() {
+	var box = document.getElementById("inform_box");
 	var el = document.getElementById("inform_content");
 	el.style.animationName = "rotY90";
-	infTO2 = window.setTimeout(function() {el.textContent = "leo";
+	infTO2 = window.setTimeout(function() {
+		el.textContent = "leo";
+		box.style.zIndex = "1";
 	el.style.animationName = "rotY-90";}, 1000);
 };
 

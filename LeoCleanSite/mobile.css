@@ -211,7 +211,6 @@
 		opacity: 0.9;
 	}
 	#inform_content {
-		z-index: 4;
 		user-select: none;
 		font-size: 30px;
 		margin: auto;
@@ -231,7 +230,7 @@
 		font-size: 2em;
 		border-radius: 50%;
 		position: fixed;
-		z-index: 2;
+		z-index: 3;
 		box-shadow: 1px 2px 3px purple; 
 	}
 	.floatB_on {
@@ -243,7 +242,7 @@
 		height: 50px;
 		left: 15px;
 		bottom: 15px;
-		transition: all 0.4s;
+		transition: all 0.3s;
 	}
 	.floatB_off {
 		background-color: white;
@@ -254,7 +253,7 @@
 		height: 40px;
 		left: 20px;
 		bottom: 20px;
-		transition: all 0.4s;
+		transition: all 0.3s;
 	}
 
 	.hiddenBs {
@@ -269,30 +268,30 @@
 		left: 22px;
 		width: 40px;
 		height: 40px;
-		z-index: 1;
+		z-index: 2;
 	}
 	.hBOn_1 {
 		bottom: 82px;
 		left: 16px;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		transition-timing-function:cubic-bezier(0,1.15,.31,.99);
 	}
 	.hBOn_2 {
 		bottom: 65px;
 		left: 68px;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		transition-timing-function: cubic-bezier(0,1.15,.31,.99);
 	}
 	.hBOn_3 {
 		bottom: 16px;
 		left: 88px;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		transition-timing-function: cubic-bezier(0,1.15,.31,.99);
 	}
 	.hBsOff {
 		bottom: 20px;
 		opacity: 0;
-		transition: all 0.5s;
+		transition: all 0.3s;
 		transition-timing-function: cubic-bezier(0,1.15,.31,.99);
 	}
 	
