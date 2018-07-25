@@ -177,10 +177,11 @@
 		position: fixed;
 		bottom: 20px;
 		display: flex;
-		z-index: 4;
 		opacity: 0.9;
+		z-index: 4;
 	}
 	#inform_content {
+		z-index: 4;
 		user-select: none;
 		font-size: 30px;
 		margin: auto;
