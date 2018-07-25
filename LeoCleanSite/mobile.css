@@ -163,14 +163,12 @@
 
 	/*dropdown menu*/
 	#menuDiv {
-		z-index: -1;
 		position: fixed;
 		right: 1vw;
 		width: 82vw;
 		font-size: 1.5em;
 	}
 	#menuDiv li {
-		z-index: 1;
 		position: relative;
 		left: -25px;
 		background-color: #5B29FB;
@@ -181,19 +179,20 @@
 		border-radius: 20px;
 	}
 	.menuOn {
-		transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-		transition: all 0.5s;
+		transition: all 0.7s;
+		transition-timing-function: cubic-bezier(0,.74,.57,.97);
 	}
 	.menuOff {
-		transform: translate(-48vw, 20px) rotateX(70deg) rotateY(0deg) rotateZ(90deg);
-		opacity: 0.3;
-		transition: all 0.5s;
+		transform: rotateY(90deg);
+		opacity: 0;
+		transition: all 0.7s;
+		transition-timing-function: cubic-bezier(.57,.97,0,.74);
 	}
 
 
 	/*content style*/
 	#content {
-		margin-left: 10vw;
+		margin-left: 15vw;
 		padding: 10px;
 		color: black;
 	}

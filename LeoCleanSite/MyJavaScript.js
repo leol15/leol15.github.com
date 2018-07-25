@@ -61,17 +61,12 @@ var leftIconOff = function() {
 	li_c.className = "li_c_off";
 };
 var menuOn = function() {
-	var el = document.querySelectorAll("#menu li");
-	for(var i=0; i<el.length; i++) {
-		el[i].className = "menuOn";
-		console.log(el[i]);
-	}
+	var el = document.querySelector("#menuDiv");
+	el.className = "menuOn";
 };
 var menuOff = function() {
-	var el = document.querySelectorAll("#menu li");
-	for(var i=0; i<el.length; i++) {
-		el[i].className = "menuOff";
-	}
+	var el = document.querySelector("#menuDiv");
+	el.className = "menuOff";
 };
 var leftIconClicked = function() {
 	if(leftIconBox.className == "left_icon_on") {
