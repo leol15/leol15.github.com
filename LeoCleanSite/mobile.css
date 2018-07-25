@@ -196,6 +196,7 @@
 		font-size: 2em;
 		border-radius: 50%;
 		position: fixed;
+		z-index: 2;
 		box-shadow: 1px 2px 3px purple; 
 	}
 	.floatB_on {
@@ -207,7 +208,7 @@
 		height: 50px;
 		left: 15px;
 		bottom: 15px;
-		transition: all 0.2s;
+		transition: all 0.4s;
 	}
 	.floatB_off {
 		background-color: white;
@@ -218,48 +219,49 @@
 		height: 40px;
 		left: 20px;
 		bottom: 20px;
-		transition: all 0.2s;
+		transition: all 0.4s;
 	}
 
 	.hiddenBs {
 		padding: 0px;
 		font-size: 1.5em;
 		border-radius: 50%;
-		box-shadow: 2px 2px 2px purple; 
+		border: none;
+		box-shadow: -2px 2px 1px gray; 
 		background-color: #5B1BDF;
 		color: white;
 		position: fixed;
-		left: 20px;
+		left: 22px;
 		width: 40px;
 		height: 40px;
-		animation-duration: 0.7s;
-		animation-fill-mode: forwards;
+		z-index: 1;
+	}
+
+	.hBOn_1 {
+		bottom: 82px;
+		left: 16px;
+		transition: all 0.3s;
+		transition-timing-function:cubic-bezier(0.74,-0.01, 0.54, 1.22);
+	}
+	.hBOn_2 {
+		bottom: 65px;
+		left: 68px;
+		transition: all 0.3s;
+		transition-timing-function: cubic-bezier(0.74,-0.01, 0.54, 1.22);
+	}
+	.hBOn_3 {
+		bottom: 16px;
+		left: 88px;
+		transition: all 0.3s;
+		transition-timing-function: cubic-bezier(0.74,-0.01, 0.54, 1.22);
+	}
+	.hBsOff {
+		bottom: 20px;
 		opacity: 0;
-		display: none;
+		transition: all 0.3s;
+		transition-timing-function: cubic-bezier(0.74,-0.01, 0.54, 1.22);
 	}
-	#hB1 {
-		bottom: 80px;
-	}
-	#hB2 {
-		bottom: 140px;
-	}
-	#hB3 {
-		bottom: 200px;
-	}
-
-
-	@keyframes showBt {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-
-
-
+	
 
 
 }

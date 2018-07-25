@@ -11,17 +11,20 @@ var headerBoxChange = function() {
 	}, 2000);	
 };
 
+var infTO1, infTO2;
 var informText = function(txt) {
 	var el = document.getElementById("inform_content");
 	el.style.animationName = "rotY90";
+	window.clearTimeout(infTO1);
+	window.clearTimeout(infTO2);
 	window.setTimeout(function() {el.textContent = txt; 
 		el.style.animationName = "rotY-90";}, 1000);
-	window.setTimeout(function() {removeText()}, 2800);
+	infTO1 = window.setTimeout(function() {removeText()}, 2800);
 };
 var removeText = function() {
 	var el = document.getElementById("inform_content");
 	el.style.animationName = "rotY90";
-	window.setTimeout(function() {el.textContent = "leo";
+	infTO2 = window.setTimeout(function() {el.textContent = "leo";
 	el.style.animationName = "rotY-90";}, 1000);
 };
 
@@ -69,45 +72,47 @@ leftIconBox.addEventListener("touchend", leftIconClicked);
 
 
 //float button
-var clearHBNames = function() {
+var showHbs = function() {
 	var hBs = document.querySelectorAll("#hiddenBsDiv button");
-	for(var n=0; n<hBs.length; n++) {
- 		hBs[n].style.animationName = "";
- 	}
- 	console.log("names cleared");
+	for (var i=0; i<hBs.length; i++) {
+		hBs[i].className = "hiddenBs hBOn_" + (i+1);
+	}	
 };
-var showHBs = function() {
- 	var hBs = document.querySelectorAll("#hiddenBsDiv button");
- 	for(var n=0; n<hBs.length; n++) {
- 		hBs[n].style.display = "inline";
- 		hBs[n].style.animationName = "showBt";
- 		hBs[n].style.animationDirection = "normal";
- 	}
+var hideHbs = function() {
+	var hBs = document.querySelectorAll("#hiddenBsDiv button");
+	for (var i=0; i<hBs.length; i++) {
+		hBs[i].className = "hiddenBs hBsOff";
+	}
 };
-
-var hideHBs = function() {
- 	var hBs = document.querySelectorAll("#hiddenBsDiv button");
- 	for(var n=0; n<hBs.length; n++) {
- 		hBs[n].style.animationDirection = "reverse";
- 		hBs[n].style.animationName = "showBt";
- 		hBs[n].style.display = "none";
- 	}	
- 	clearHBNames();
-};
-
 var floatBClicked = function() {
 	var fbEl = document.getElementById("floatB");
 	if(fbEl.className == "floatB_on") {
 		fbEl.className = "floatB_off";
-		hideHBs();
-		
+		hideHbs();
+
 		window.clearTimeout(autoClose);
 	} else {
 		fbEl.className = "floatB_on";
-		showHBs();
+		showHbs();
 
 		window.clearTimeout(autoClose);
-		autoClose = window.setTimeout(function() {fbEl.className="floatB_off"; hideHBs();}, 5000);
+		autoClose = window.setTimeout(function() {
+			fbEl.className="floatB_off";
+			hideHbs();
+			
+		}, 5000);
 	}
 }; 
 
+//hidden button one
+var hB1Clicked = function() {
+	informText("You clicked button 1");
+};
+//hidden button two
+var hB2Clicked = function() {
+	informText("You clicked button 2");
+};
+//hidden button three
+var hB3Clicked = function() {
+	informText("You clicked button 3");
+};
