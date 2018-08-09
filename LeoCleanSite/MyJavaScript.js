@@ -122,13 +122,24 @@ var floatBClicked = function() {
 
 //hidden button one
 var hB1Clicked = function() {
-	informText("You clicked button 1");
+	informText("leol15.github.io");
 };
 //hidden button two
 var hB2Clicked = function() {
-	informText("You clicked button 2");
+	informText("Thank You");
 };
 //hidden button three
 var hB3Clicked = function() {
-	informText("You clicked button 3");
+	informText("This is home page");
 };
+
+
+//menu link functions
+var mn3fc = function() {
+	var space = document.getElementById("content");
+	var originalTxt = space.innerHTML;
+	space.innerHTML = "\<iframe height=\"200px\" src=\"http://www.washington.edu/maps/\"\>\</iframe\>";
+};
+var mn3 = document.getElementById("mn3");
+mn3.addEventListener("click", mn3fc);
+
