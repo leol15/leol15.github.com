@@ -7,4 +7,10 @@
 		padding: 10px;
 		color: black;
 	}
+
+	ul {
+		list-style-type: square;
+		list-style-position: inside;
+		list-style: red;
+	}
 }
