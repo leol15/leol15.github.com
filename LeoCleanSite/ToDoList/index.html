@@ -37,10 +37,10 @@
 	<div id="content">
 		
 		<ul>
-			<li>Complete College</li>
-			<li>Pay off debts</li>
-			<li>Fix my earbuds</li>
-			<li>Go sporting</li>
+			<li><span></span>Complete College</li>
+			<li><span></span>Pay off debts</li>
+			<li><span></span>Fix my earbuds</li>
+			<li><span></span>Go sporting</li>
 		</ul>
 
 
@@ -73,5 +73,34 @@
 
 
 	<script src="MyJavaScript.js"></script>
+	<script type="text/javascript">
+		var listEls = document.querySelectorAll("li");
+		var liClicked = function() {
+			var check = this.getElementsByTagName("span");
+			if(this.style.color == "white") {
+				//checked
+				this.style.backgroundColor = "#6ECBF7";
+				this.style.color = "#00202F";
+				this.style.textDecoration = "line-through";
+				this.style.fontWeight = "normal";
+				check[0].style.backgroundColor = "#5B1BDF";
+				check[0].style.border = "2px solid #5B1BDF";
+				check[0].style.borderRadius = "50%";
+			} else {
+				//unchecked
+				this.style.backgroundColor = "#006596";
+				this.style.color = "white";
+				this.style.textDecoration = "none";
+				this.style.fontWeight = "bold";
+				check[0].style.backgroundColor = "";
+				check[0].style.border = "2px solid white";
+				check[0].style.borderRadius = "0%";
+			}
+		};
+		for(var n=0; n<listEls.length; n++) {
+			listEls[n].style.color = "white";
+			listEls[n].addEventListener("click", liClicked);
+		}
+	</script>
 </body>
 </html>

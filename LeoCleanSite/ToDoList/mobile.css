@@ -5,12 +5,31 @@
 	#content {
 		margin-left: 15vw;
 		padding: 10px;
-		color: black;
 	}
 
 	ul {
-		list-style-type: square;
-		list-style-position: inside;
-		list-style: red;
+		margin-left: 0px;
+		list-style-type: none;
+		font-size: 25px;
+		font-weight: bolder;
+		padding: 0px;
 	}
+	li span{
+		transition: all 0.4s;
+		float: left;
+		display: inline-flex;
+		width: 15px;
+		height: 15px;
+		margin: 10px 15px 10px 10px;
+		border: 2px solid white;
+		border-radius: 20%;
+	}
+	li {
+		transition: all 0.6s;
+		background-color: #006596;
+		text-align: center;
+		line-height: 40px;
+	}
+
+
 }
