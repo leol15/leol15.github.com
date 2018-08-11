@@ -37,12 +37,12 @@
 	<div id="content">
 		
 		<ul>
-			<li><span></span>Complete College</li>
-			<li><span></span>Pay off debts</li>
-			<li><span></span>Fix my earbuds</li>
-			<li><span></span>Go sporting</li>
-			<li><span></span>Register Valuables</li>
-			<li><span></span>Check out campus jobs</li>
+			<li><span><div></div></span>Complete College</li>
+			<li><span><div></div></span>Pay off debts</li>
+			<li><span><div></div></span>Fix my earbuds</li>
+			<li><span><div></div></span>Go sporting</li>
+			<li><span><div></div></span>Register Valuables</li>
+			<li><span><div></div></span>Check out campus jobs</li>
 		</ul>
 
 
@@ -79,15 +79,24 @@
 		var listEls = document.querySelectorAll("li");
 		var liClicked = function() {
 			var check = this.getElementsByTagName("span");
+			var tick = this.getElementsByTagName("div");
 			if(this.style.color == "white") {
 				//checked
 				this.style.backgroundColor = "#6ECBF7";
 				this.style.color = "#00202F";
 				this.style.textDecoration = "line-through";
 				this.style.fontWeight = "normal";
-				check[0].style.backgroundColor = "#5B1BDF";
+				check[0].style.backgroundColor = "1AE21A";
 				check[0].style.border = "2px solid #5B1BDF";
 				check[0].style.borderRadius = "50%";
+				tick[0].style.width = "7.5px";
+				tick[0].style.height = "7.5px";
+				tick[0].style.borderRight = "4px solid #006D00";
+				tick[0].style.borderBottom = "4px solid #006D00";
+				tick[0].style.borderRadius = "10px";
+				tick[0].style.transform = "translate(1.5px, 1px) rotateZ(45deg)";
+				tick[0].style.transition = "all 0.3s";
+
 			} else {
 				//unchecked
 				this.style.backgroundColor = "#006596";
@@ -97,6 +106,10 @@
 				check[0].style.backgroundColor = "";
 				check[0].style.border = "2px solid white";
 				check[0].style.borderRadius = "0%";
+				tick[0].style.borderBottom = "3px solid #006596";
+				tick[0].style.borderRight = "3px solid #006596";
+				tick[0].style.borderRadius = "0px";
+				tick[0].style.transform = "translate(0px, 0px) rotate(0deg)";
 			}
 		};
 		for(var n=0; n<listEls.length; n++) {
