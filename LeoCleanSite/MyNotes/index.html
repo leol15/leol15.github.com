@@ -1,9 +1,56 @@
+
+<!--My Notes-->
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Notes</title>
+	<meta charset="utf-8">
+	<!--Device Friendly-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="themeMobile.css">
+	<link rel="stylesheet" type="text/css" href="mobile.css">
+	<!--Google Font-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 </head>
 <body>
-	There seems to be nothing here...
+	<div id="header">
+		<div id="left_icon" class="left_icon_off">
+			<p id="left_icon_p"><span id="li_a" class="li_a_off">L</span><span id="li_b" class="li_b_off">L</span><span id="li_c" class="li_c_off">L</span></p>
+		</div>
+		<div id="center_mark"><span>L</span></div>	
+
+	</div>
+
+	<div id="menuDiv" class="menuOff">
+		<ul id="menu">
+			<a href="../YitaArts/index.html"><li>Yitagesus' Test Page</li></a>
+			<a href="MyNotes/index.html"><li>My Notes</li></a>
+			<li id="mn3">Did Nothing</li>
+			<a href="ToDoList/index.html"><li>Be Grateful</li></a>
+			<a href="EmptyPage/index.html"><li>Live Life Fully</li></a>
+			<a href="Experiment/index.html"><li>Experiment</li></a>
+		</ul>
+	</div>
+
+
+	<div id="content">
+		<p>no notes right now</p>
+	</div>
+
+	<!--floating button-->
+	<button id="floatB" class="floatB_off" onclick="floatBClicked()">+</button>
+	<div id="hiddenBsDiv"> 
+		<button id="hB1" class="hiddenBs hBsOff" onclick="hB1Clicked()">=</button>
+		<button id="hB2" class="hiddenBs hBsOff" onclick="hB2Clicked()">!</button>
+		<button id="hB3" class="hiddenBs hBsOff" onclick="hB3Clicked()">?</button>
+	</div>
+
+	<div id="inform_box">
+		<div id="inform_content">leo</div>
+	</div>
+
+
+	<script src="MyJavaScript.js"></script>
 </body>
 </html>
