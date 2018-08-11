@@ -3,18 +3,39 @@
 
 @media only screen and (max-width: 900px) {
 	#content {
-		margin-left: 15vw;
-		padding: 10px;
+		margin: 0px;
+		padding: 0px;
 	}
 
-	ul {
+	#content ul {
+		border: 4px inset silver;
+		overflow-y: scroll;
+		height: 50vh;
 		margin-left: 0px;
+		margin-top: 0px;
 		list-style-type: none;
-		font-size: 25px;
+		font-size: 22px;
 		font-weight: bolder;
 		padding: 0px;
 	}
-	li span{
+	#content li {
+		display: flex;
+		transition: all 0.6s;
+		background-color: #006596;
+		text-align: center;
+		line-height: 40px;
+	}
+	.due {
+		width: 20%;
+		font-size: 15px;
+		font-weight: normal;
+		background-color: rgb(140, 140, 140);
+		padding: 2px 12px 2px 12px;
+	}
+	.obj {
+		width: 80%;
+	}
+	.check{
 		transition: all 0.4s;
 		float: left;
 		display: inline-flex;
@@ -23,12 +44,6 @@
 		margin: 10px 15px 10px 10px;
 		border: 2px solid white;
 		border-radius: 20%;
-	}
-	li {
-		transition: all 0.6s;
-		background-color: #006596;
-		text-align: center;
-		line-height: 40px;
 	}
 
 

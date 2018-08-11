@@ -37,12 +37,12 @@
 	<div id="content">
 		
 		<ul>
-			<li><span><div></div></span>Title Status</li>
-			<li><span><div></div></span>Leather</li>
-			<li><span><div></div></span>Side Airbags</li>
-			<li><span><div></div></span>Anti Lock Brakes</li>
-			<li><span><div></div></span>Power Package</li>
-			<li><span><div></div></span>Pictures</li>
+			<li><div class="due">Tue 14</div><div class="obj"><span class="check"><div class="tick"></div></span>Title Status</div></li>
+			<li><div class="due"></div><div class="obj"><span class="check"><div class="tick"></div></span>Leather</div></li>
+			<li><div class="due"></div><div class="obj"><span class="check"><div class="tick"></div></span>Side Airbags</div></li>
+			<li><div class="due"></div><div class="obj"><span class="check"><div class="tick"></div></span>Anti Lock Brakes</div></li>
+			<li><div class="due"></div><div class="obj"><span class="check"><div class="tick"></div></span>Power Package</div></li>
+			<li><div class="due"></div><div class="obj"><span class="check"><div class="tick"></div></span>Pictures</div></li>
 		</ul>
 
 
@@ -76,16 +76,17 @@
 
 	<script src="MyJavaScript.js"></script>
 	<script type="text/javascript">
-		var listEls = document.querySelectorAll("li");
+		var listEls = document.querySelectorAll("#content li");
 		var liClicked = function() {
-			var check = this.getElementsByTagName("span");
-			var tick = this.getElementsByTagName("div");
-			if(this.style.color == "white") {
+			var check = this.getElementsByClassName("check");
+			var tick = this.getElementsByClassName("tick");
+			var target = this.getElementsByClassName("obj")[0];
+			if(target.style.color == "white") {
 				//checked
-				this.style.backgroundColor = "#6ECBF7";
-				this.style.color = "#00202F";
-				this.style.textDecoration = "line-through";
-				this.style.fontWeight = "normal";
+				target.style.backgroundColor = "#6ECBF7";
+				target.style.color = "#00202F";
+				target.style.textDecoration = "line-through";
+				target.style.fontWeight = "normal";
 				check[0].style.backgroundColor = "#5B1BDF";
 				check[0].style.border = "2px solid #5B1BDF";
 				check[0].style.borderRadius = "50%";
@@ -99,10 +100,10 @@
 
 			} else {
 				//unchecked
-				this.style.backgroundColor = "#006596";
-				this.style.color = "white";
-				this.style.textDecoration = "none";
-				this.style.fontWeight = "bold";
+				target.style.backgroundColor = "#006596";
+				target.style.color = "white";
+				target.style.textDecoration = "none";
+				target.style.fontWeight = "bold";
 				check[0].style.backgroundColor = "";
 				check[0].style.border = "2px solid white";
 				check[0].style.borderRadius = "0%";
@@ -111,11 +112,29 @@
 				tick[0].style.borderRadius = "0px";
 				tick[0].style.transform = "translate(0px, 0px) rotate(0deg)";
 			}
+			checkListCompletion();
 		};
 		for(var n=0; n<listEls.length; n++) {
-			listEls[n].style.color = "white";
+			listEls[n].getElementsByClassName("obj")[0].style.color = "white";
 			listEls[n].addEventListener("click", liClicked);
 		}
+
+
+		var checkListCompletion = function() {
+			var completion = true;
+			for(var n=0; n<listEls.length; n++) {
+				if(listEls[n].getElementsByClassName("obj")[0].style.color == "white") {
+					completion = false;
+				}
+			}
+			if(completion) {
+				var txt = document.createElement("p");
+				txt.innerHTML = "Nothing Left To Do...";
+				var content = document.getElementById("content");
+				content.appendChild(txt);
+			}
+		};
+
 	</script>
 </body>
 </html>
