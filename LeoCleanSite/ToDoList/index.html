@@ -46,7 +46,13 @@
 		</ul>
 
 
-
+		<div id="status">
+			<div id="inputArea">
+				<textarea class="txtBox" id="newTask" placeholder="New task.." cols="red"></textarea>
+				<textarea class="txtBox" id="newDate" placeholder="New due date.."></textarea>
+				<button id="bt-addList" onclick="addList()"></button>
+			</div>
+		</div>
 
 
 
@@ -97,6 +103,7 @@
 				tick[0].style.borderRadius = "10px";
 				tick[0].style.transform = "translate(1.5px, 1px) rotateZ(45deg)";
 				tick[0].style.transition = "all 0.3s";
+				this.getElementsByClassName("due")[0].style.backgroundColor = "rgb(140, 140, 140)";
 
 			} else {
 				//unchecked
@@ -111,6 +118,7 @@
 				tick[0].style.borderRight = "3px solid #006596";
 				tick[0].style.borderRadius = "0px";
 				tick[0].style.transform = "translate(0px, 0px) rotate(0deg)";
+				this.getElementsByClassName("due")[0].style.backgroundColor = "rgb(50, 50, 50)";
 			}
 			checkListCompletion();
 		};
@@ -133,6 +141,21 @@
 				var content = document.getElementById("content");
 				content.appendChild(txt);
 			}
+		};
+
+		var addList = function() {
+			var dateEl = document.getElementById("newDate");
+			var taskEl = document.getElementById("newTask");
+			var li = document.createElement("li");
+			li.innerHTML = "<div class=\"due\">"+dateEl.value+"</div><div class=\"obj\"><span class=\"check\"><div class=\"tick\"></div></span>"+taskEl.value+"</div>";
+			li.getElementsByClassName("obj")[0].style.color = "white";
+			li.addEventListener("click", liClicked);
+
+			var ul = document.querySelector("#content ul");
+			ul.appendChild(li);
+
+			dateEl.value = "";
+			taskEl.value = "";
 		};
 
 	</script>
