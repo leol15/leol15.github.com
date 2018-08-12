@@ -10,7 +10,7 @@
 	#content ul {
 		border: 4px inset silver;
 		overflow-y: scroll;
-		height: 40vh;
+		height: 50vh;
 		margin: 0px;
 		list-style-type: none;
 		font-size: 22px;
@@ -52,7 +52,7 @@
 	}
 
 	#inputArea {
-		margin-top: 10px;
+		margin: 10px 0px 0px 5px;
 		border-top: 3px solid #5B1BDF;
 		padding-top: 5px;
 		background-color: rgba(20, 20, 20, 0,2);
@@ -62,11 +62,17 @@
 		border: 1px solid black;
 		box-shadow: 2px 2px gray;
 		color: white;
-		width: 40%;
 		height: 25px;
 		white-space: nowrap;
 		font-size: 19px;
 		text-align: center;
+		outline: none;
+	}
+	#newTask {
+		width: 50%;
+	}
+	#newDate {
+		width: 30%;
 	}
 	.txtBox:focus {
 		background-color: black;
@@ -86,6 +92,41 @@
 		border-radius: 5%;
 		transform: translate(0px, 10px) rotateZ(45deg);
 		outline: none;
+	}
+	#bt-addList:active {
+		transform: translate(0px, 0px) rotateZ(45deg);
+		transition: all 0.2s;
+	}
+
+	#completion {
+		padding: 10px 4px 5px 4px;
+		height: 70px;
+		outline: 1px dashed silver;
+	}
+	#completion .bar {
+		margin-left: 10vw;
+		height: 20px;
+		width: 0vw;
+		background-color: #5B1BDF;
+		border-radius: 20px;
+		transition: all 0.5s;
+	}
+	#completion .bar:before {
+		content: "";
+		background-color: rgba(240, 240, 240, 0.2);
+		position: absolute;
+		border-radius: 20px;
+		height: 20px;
+		width: 80vw;
+	}
+	#completion .stats {
+		text-align: right;
+	}
+	#completion .stats div {
+		display: inline-flex;
+		width: 40vw;
+		height: 20px;
+		padding: 5px;
 	}
 
 }

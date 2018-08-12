@@ -49,8 +49,16 @@
 		<div id="status">
 			<div id="inputArea">
 				<textarea class="txtBox" id="newTask" placeholder="New task.." cols="red"></textarea>
-				<textarea class="txtBox" id="newDate" placeholder="New due date.."></textarea>
+				<textarea class="txtBox" id="newDate" placeholder="Due date.."></textarea>
 				<button id="bt-addList" onclick="addList()"></button>
+			</div>
+
+			<div id="completion">
+				<div class="bar"></div>
+				<div class="stats">
+					<div>Completed: 0</div>
+					<div>Total: 6</div>
+				</div>
 			</div>
 		</div>
 
@@ -129,23 +137,33 @@
 
 
 		var checkListCompletion = function() {
-			var completion = true;
+			var completed = 0;
+			var listEls = document.querySelectorAll("#content ul li");
 			for(var n=0; n<listEls.length; n++) {
 				if(listEls[n].getElementsByClassName("obj")[0].style.color == "white") {
-					completion = false;
+
+				} else {
+					completed++;
 				}
 			}
-			if(completion) {
-				var txt = document.createElement("p");
-				txt.innerHTML = "Nothing Left To Do...";
-				var content = document.getElementById("content");
-				content.appendChild(txt);
-			}
+
+			var percentage = Math.round(completed/listEls.length*100);
+			var stats = document.querySelector("#completion .stats");
+			var barBgEl = document.querySelector("#completion .bar");
+			barBgEl.style.width = percentage*0.8+"vw";
+
+			var countEl = document.querySelectorAll("#content .stats div")[0];
+			var totalEl = document.querySelectorAll("#content .stats div")[1];
+			countEl.textContent = "Completed: "+completed;
+			totalEl.textContent = "Total: "+listEls.length;
 		};
 
 		var addList = function() {
 			var dateEl = document.getElementById("newDate");
 			var taskEl = document.getElementById("newTask");
+			if(dateEl.value == "" || taskEl.value == "") {
+				return;
+			}
 			var li = document.createElement("li");
 			li.innerHTML = "<div class=\"due\">"+dateEl.value+"</div><div class=\"obj\"><span class=\"check\"><div class=\"tick\"></div></span>"+taskEl.value+"</div>";
 			li.getElementsByClassName("obj")[0].style.color = "white";
@@ -156,7 +174,10 @@
 
 			dateEl.value = "";
 			taskEl.value = "";
+
+			checkListCompletion();
 		};
+
 
 	</script>
 </body>
