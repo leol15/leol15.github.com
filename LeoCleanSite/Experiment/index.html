@@ -35,7 +35,19 @@
 
 
 	<div id="content">
-		<p>Experiments here</p>
+		<button id="siteMenu" onclick="ExpBtClicked()">Expand</button>
+		<iframe id="myFrame" src="https://www.usnews.com/news"></iframe>
+		<div id="sites">
+			<button onclick="show(LeoLinks[0])">Fox News</button>
+			<button onclick="show(LeoLinks[1])">The Atlantic</button>
+			<button onclick="show(LeoLinks[2])">NBC</button>
+			<button onclick="show(LeoLinks[3])">US News</button>
+		</div>
+
+
+
+
+
 	</div>
 
 	<!--floating button-->
@@ -52,5 +64,29 @@
 
 
 	<script src="MyJavaScript.js"></script>
+	<script type="text/javascript">
+		var LeoLinks = [
+			"https://www.foxnews.com/",
+			"https://www.theatlantic.com/",
+			"https://www.nbcnews.com/",
+			"https://www.usnews.com/news"
+		];
+
+		var iframeAdd = document.getElementById("myFrame");
+		var show = function(address) {
+			iframeAdd.src = address;
+			console.log(address);
+		};
+
+		var mn = document.getElementById("sites");
+		mn.style.display = "none";
+		var ExpBtClicked = function() {
+			if(mn.style.display == "none") {
+				mn.style.display = "block";
+			} else {
+				mn.style.display = "none";
+			}
+		};
+	</script>
 </body>
 </html>

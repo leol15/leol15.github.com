@@ -3,8 +3,35 @@
 
 @media only screen and (max-width: 900px) {
 	#content {
-		margin-left: 15vw;
-		padding: 10px;
+		margin: 0px;
+		padding: 0px;
 		color: black;
+		height: 400px;
+	}
+	iframe {
+		width: 100vw;
+		height: 400px;
+	}
+
+	#siteMenu {
+		width: 100vw;
+		padding: 0px;
+	}
+	#sites {
+		position: fixed;
+		top: 90px;
+		left: 0px;
+		display: none;
+	}
+	#sites button {
+		font-size: 20px;
+		font-size: bold;
+		color: white;
+		display: block;
+		width: 150px;
+		height: 40px;
+		border: 2px solid black;
+		box-shadow: 5px 5px 5px black;
+		background-color: rgba(40, 40, 40);
 	}
 }
