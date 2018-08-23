@@ -37,6 +37,11 @@
 
 	<div id="content">
 		<p>Empty Page</p>
+		<div id="alignDiv">
+			<div id="circle"></div>
+			<div id="testDiv" onmouseenter="tMe(event)" onmousemove="tMm(event)" onmouseleave="tMl(event)"></div>
+			<div id="newMouse"></div>
+		</div>
 	</div>
 
 	<!--floating button-->
@@ -53,5 +58,25 @@
 
 
 	<script src="MyJavaScript.js"></script>
+	<script type="text/javascript">
+		var tMe = function(e) {
+			var el = document.getElementById('newMouse');
+			el.style.display = "";
+			el.style.position = "fixed";
+			el.style.top = e.clientY/2 + 90 +"px";
+			el.style.left = e.clientX/2 - 90 +"px";
+		};
+
+		var tMm = function(e) {
+			var el = document.getElementById('newMouse');
+			el.style.top = e.clientY/2 + 90 + "px";
+			el.style.left = e.clientX/2 - 90 + "px";
+		};
+
+		var tMl = function(e) {
+			var el = document.getElementById("newMouse");
+			el.style.display = "none";			
+		};
+	</script>
 </body>
 </html>
