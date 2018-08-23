@@ -1,60 +1,53 @@
+* {}
+
 @media only screen and (min-width: 901px) {
 
 	* {
 		box-sizing: border-box;
 	}
 	body {
-		margin: 0px 0px 0px 0px;
-		font-family: Montserrat;
-		background-color: #D0CFD3;
+		margin: 0px;
+		background-color: #AB91FD;
 		color: white;
-		font-size: 2em;
 	}
 
 	#header {
-		background-color: #5B1BDF;
-		height: 10vh;
-		max-height: 60px;
-		min-height: 40px;
-		width: 100%;
-		min-width: 600px;
-
-		display: flex;
+		display: none;
 	}
 
-	#center_mark {
-		margin: auto;
+	#menuDiv {
+		margin: 0px;
+		background-color: #47367B;
+	}
+
+	#menu {
+		margin: 0px;
+	}
+
+	#menu a {
+		text-decoration: none;
+	}
+
+	#menu li {
+		color: white;
+		display: inline-flex;
+		padding: 5px 10px 5px 10px;
+		border-top: 3px solid #AB91FD;
 		
-		border-left: 6px double #FFFFFF;
-		border-right: 6px double #FFFFFF;
-		border-radius: 10px;
+	}
 
-		height: 80%;
-		min-height: 40px;
-		width: 15%;
-		min-width: 15%;
-
-		text-align: center;
-		font-weight: bold;
-		padding-top: 5px;
+	#menu li:hover {
+		border-top-color: #47367B;;
+		transform: scale(1.1, 1.1) translate(0px, 3px) rotateZ(-3deg);
+		box-shadow: 0px 2px 3px black;
+		transition: all 0.5s;
 	}
 
 
-	#inform_box {
-		width: 100%;
-		position: fixed;
-		bottom: 3vh;
-		display: flex;
+	#content {
+		outline: 2px dashed #705CAE;
+		margin: 0px 20px 0px 20px;
 	}
-	#inform_content {
-		margin: auto;
-		text-align: center;
-		background-color: #C8B3F4;
-		padding: 20px;
-		border-radius: 20px;
-		line-height: 0px;
-	}
+
+
 }
-
-
-
