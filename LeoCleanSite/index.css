@@ -12,12 +12,22 @@
 	}
 
 	#header {
+		font-size: 25px;
+		float: left;
+		padding: 3px 0px 0px 13px;
+	}
+	#left_icon {
 		display: none;
+	}
+	#header a {
+		color: white;
+		text-decoration: none;
 	}
 
 	#menuDiv {
 		margin: 0px;
 		background-color: #47367B;
+		font-size: 21px;
 	}
 
 	#menu {
@@ -45,9 +55,23 @@
 
 
 	#content {
-		outline: 2px dashed #705CAE;
-		margin: 0px 20px 0px 20px;
+		font-size: 2vw;
+		margin: 10px 20px 0px 20px;
+		border-top: 4px solid #705CAE;
 	}
-
+	#content p {
+		letter-spacing: 1px;
+		padding: 10px 20px 0px 20px;
+	}
+	#content p span {
+		color: black;
+		letter-spacing: normal;
+		font-size: 4vw;
+		text-shadow: 1px 0px #705CAE;
+		font-style: italic;
+	}
+	#content .dash {
+		color: #705CAE;
+	}
 
 }
