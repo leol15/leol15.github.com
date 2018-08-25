@@ -40,7 +40,7 @@
 		<div id="alignDiv">
 			<div id="circle"></div>
 			<div id="testDiv" onmouseenter="tMe(event)" onmousemove="tMm(event)" onmouseleave="tMl(event)"></div>
-			<div id="newMouse"></div>
+			<div id="newMouse"><div id="newMouse2"></div></div>
 		</div>
 	</div>
 
@@ -62,20 +62,28 @@
 		var tMe = function(e) {
 			var el = document.getElementById('newMouse');
 			el.style.display = "";
-			el.style.position = "fixed";
 			el.style.top = e.clientY/2 + 90 +"px";
 			el.style.left = e.clientX/2 - 90 +"px";
+			var el2 = document.getElementById('newMouse2');
+			el2.style.display = "";
+			el2.style.top = 20 + "px";
+			el2.style.left = 20 + "px";
 		};
 
 		var tMm = function(e) {
 			var el = document.getElementById('newMouse');
 			el.style.top = e.clientY/2 + 90 + "px";
 			el.style.left = e.clientX/2 - 90 + "px";
+			var el2 = document.getElementById('newMouse2');
+			el2.style.top = 20 + (e.clientY - 228)/8 + "px";
+			el2.style.left = 20 + (e.clientX - 920)/8 + "px";
 		};
 
 		var tMl = function(e) {
 			var el = document.getElementById("newMouse");
-			el.style.display = "none";			
+			el.style.display = "none";
+			var el2 = document.getElementById("newMouse2");
+			el2.style.display = "none";			
 		};
 	</script>
 </body>
