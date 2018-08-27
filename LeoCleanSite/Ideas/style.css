@@ -1,0 +1,64 @@
+/*******************
+Resources:
+*******************/
+:root {
+	--L-c0: #F8F3FE;
+	--L-c1: #C19EF6;
+	--L-c2: #7A2CF3;
+	--L-c3: #6003F1;
+	--L-c4: #9B62F4;
+}
+
+
+* {
+	box-sizing: content-box;
+}
+html {
+	background-color: #CCCCCC;
+}
+body {
+	background-color: var(--L-c0);
+	margin: 0px 100px 0px 100px;
+	min-height: 100vh;
+}
+
+#header ul {
+	background-color: var(--L-c1);
+	list-style: none;
+	display: flex;
+	margin: 0px;
+	padding: 5px 0px 10px 0px;
+	border-bottom: 4px solid var(--L-c2);
+}
+#header li {
+	padding: 5px 20px 5px 20px;
+	margin: auto;
+	font-size: 20px;
+	color: var(--L-c0);
+	border-radius: 5px 0px 5px 0px;
+}
+#header li:hover {
+	background-color: var(--L-c3);
+	box-shadow: 4px -4px 2px var(--L-c2);
+	color: var(--L-c4);
+	transform: translate(-2px, 5px);
+	transition: all 0.7s;
+}
+
+#header a {
+	text-decoration: none;
+	color: var(--L-c0);
+}
+#header a:active {
+	text-shadow: 1px 1px 1px var(--L-c0);
+}
+
+#footer {
+	float: bottom;
+	width: 100%;
+	height: 100px;
+	margin-top: 20px;
+	background-color: var(--L-c1);
+	border-top: 4px solid var(--L-c2);
+	color: var(--L-c3);
+}
