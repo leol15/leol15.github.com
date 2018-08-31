@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body onmousemove="moveBg(event)">
 	<div id="header">
 		<ul>
 			<li><a href="#">This Page</a></li>
@@ -22,5 +22,13 @@
 	<div id="footer">
 		There is no footer here... except this!
 	</div>
+
+	<script type="text/javascript">
+		var moveBg = function(e) {
+			var x = e.clientX/60+40;
+			var y = e.clientY/40+40;
+			document.body.style.backgroundPosition = x + "%" + " " + y + "%";
+		};
+	</script>
 </body>
 </html>

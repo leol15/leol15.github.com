@@ -15,9 +15,14 @@ Resources:
 }
 html {
 	background-color: #CCCCCC;
+	background-image: linear-gradient(to bottom, var(--L-c1), skyblue);
 }
 body {
-	background-color: var(--L-c0);
+	background-image: url("img/Mt_Rainer.png");
+	background-repeat: no-repeat;
+	background-origin: center center;
+	background-attachment: fixed;
+	background-size: 80vw;
 	margin: 0px 100px 0px 100px;
 	min-height: 100vh;
 }
