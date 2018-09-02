@@ -43,13 +43,26 @@ var piano = function(e) {
 };
 
 
+var displayAreaEl = document.getElementById("displayArea");	
 var getFile = function() {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
-			console.log(this.responseText);	
+			displayArea.innerHTML = this.responseText();
 		}
 	};
 	req.open("GET", "secret.txt", true);
 	req.send();
 };
+
+var newHeadingEl = document.getElementById("heading");
+var changeHeading = function(e) {
+	if(e.keyCode == 13) {
+		e.preventDefault();
+		var txt = newHeadingEl.value;
+		newHeadingEl.value = "";
+
+
+	}
+};
+
