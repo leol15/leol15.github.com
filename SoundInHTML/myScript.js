@@ -46,10 +46,10 @@ var piano = function(e) {
 var getFile = function() {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
-		if(this.readystate == 4 && this.status == 200) {
+		if(this.readyState == 4 && this.status == 200) {
 			console.log(this.responseText);
 		}
-		console.log(this.readystate);
+		console.log("readyState = " + this.readyState + "; status: " + this.status);
 	};
 	req.open("GET", "myScript.js", true);
 	req.send();
