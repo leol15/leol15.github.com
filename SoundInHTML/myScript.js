@@ -62,7 +62,10 @@ var changeHeading = function(e) {
 		var txt = newHeadingEl.value;
 		newHeadingEl.value = "";
 
-
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function() {};
+		req.open("POST", "secret.txt", true);
+		req.send();
 	}
 };
 
