@@ -47,10 +47,9 @@ var getFile = function() {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
+			console.log(this.responseText);	
 		}
-		console.log(this.responseText);
-		console.log("readyState = " + this.readyState + "; status: " + this.status);
 	};
-	req.open("GET", "myScript.js", true);
+	req.open("GET", "secret.txt", true);
 	req.send();
 };
