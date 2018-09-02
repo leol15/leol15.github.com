@@ -63,15 +63,14 @@ var changeHeading = function(e) {
 		newHeadingEl.value = "";
 
 		var req = new XMLHttpRequest();
-		req.open("POST", "secret.txt", true);
-
 		req.onreadystatechange = function() {
 			if(this.readyState == 4 && this.status == 200) {
 				displayAreaEl.innerHTML = this.responseText;
 			}
 		};
+		req.open("POST", "secret.txt", true);
 		req.setRequestHeader('Content-Type', 'text/txt');
-		req.send("Whart is this about");
+		req.send(txt);
 	}
 };
 
