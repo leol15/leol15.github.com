@@ -69,7 +69,7 @@ var changeHeading = function(e) {
 			}
 		};
 		req.open("POST", "secret.txt", true);
-		req.setRequestHeader('Content-Type', 'text/txt');
+		req.setRequestHeader('Content-Type', 'text/plain');
 		req.send(txt);
 	}
 };
