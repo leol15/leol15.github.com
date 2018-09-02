@@ -65,7 +65,7 @@ var changeHeading = function(e) {
 		var req = new XMLHttpRequest();
 		req.onreadystatechange = function() {};
 		req.open("POST", "secret.txt", true);
-		req.send();
+		req.send("Whart is this about");
 	}
 };
 
