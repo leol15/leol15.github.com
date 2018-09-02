@@ -39,7 +39,7 @@ var piano = function(e) {
 	console.log(f);
 
 	o.start();
-	g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 5);
+	g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1);
 };
 
 
@@ -47,8 +47,8 @@ var getFile = function() {
 	var req = new XMLHttpRequest();
 	req.onreadystatechange = function() {
 		if(this.readyState == 4 && this.status == 200) {
-			console.log(this.responseText);
 		}
+		console.log(this.responseText);
 		console.log("readyState = " + this.readyState + "; status: " + this.status);
 	};
 	req.open("GET", "myScript.js", true);
