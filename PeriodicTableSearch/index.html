@@ -50,6 +50,7 @@
 	<h1>Periodic Table Search</h1>
 	<textarea onkeyup="findEl(this)"></textarea>
 	<div id="elementList">
+		<!-- this is an example -->
 		<div class="elementContainer">
 			<div class="name">
 				Carbon (C)
@@ -214,26 +215,37 @@
 		//searching
 		var elementListEl = document.getElementById('elementList');
 		var findEl = function(el) {
-			if(el.value == "") {
-				return;
-			}
-			
+			//reset periodic table
 			for(var n = 0; n < periodicTable.length; n++) {
 				periodicTable[n].display = false;
 			}
-			var oriTxt = el.value;
-			var txt = el.value.toLowerCase();
-			for(var n = 0; n < periodicTable.length; n++) {
-				if(periodicTable[n].name.includes(txt)) {
-					periodicTable[n].display = true;
-				} 
-				if(periodicTable[n].symbol.includes(oriTxt)) {
-					periodicTable[n].display = true;
-				}
-				if(periodicTable[n].atomicNumber.includes(oriTxt)) {
-					periodicTable[n].display = true;
+			//get input string and store it as array
+			var input = el.value;
+			var inputArr = input.replace(/ /g, "").split(",");
+			console.log(inputArr);
+			//check validity
+			if(input == "") {
+				return;
+			}
+			//search process
+			for(var m = 0; m < periodicTable.length; m++) {
+				for(var n = 0; n < inputArr.length; n++) {
+					var focusElement = periodicTable[m];
+					var searchElement = inputArr[n];
+					if(searchElement === "") {
+						//don't search
+					} else {
+						if(focusElement.name.includes(searchElement) || focusElement.atomicNumber == searchElement) {
+							focusElement.display = true;
+						} 
+						if(focusElement.symbol.includes(searchElement.charAt(0).toUpperCase() + searchElement.slice(1))) {
+							focusElement.display = true;	
+						}
+					}
 				}
 			}
+
+			//update list
 			elementListEl.innerHTML = "";
 			for(var n = 0; n < periodicTable.length; n++) {
 				if(periodicTable[n].display === true) {
