@@ -164,10 +164,14 @@
 			}
 
 			var inputCharArray = el.value.split('');
-
 			var pairArray = [];
 
-			var pair = inputCharArray[0];
+			var pair;
+			if (inputCharArray.length == 1) {
+				pairArray = [inputCharArray[0]];
+			} else {
+				pair = inputCharArray;
+			}
 			for (var i = 1; i < inputCharArray.length; i++) {
 				var tarStr = inputCharArray[i];
 				if (digits.includes(tarStr) || tarStr != tarStr.toUpperCase()) {
