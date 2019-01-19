@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Me</title>
+	<style type="text/css">
+		body {
+			font-family: monospace;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>About me</h1>
+		<p>Who am I as a person in this world?</p>
+	</div>
+
+	<script type="text/javascript">
+		var header = document.getElementById('header');
+		console.log(header.getElementsByTagName('h1')[0]);
+		var headerString = header.getElementsByTagName('h1')[0] + header.getElementsByTagName('p')[0];
+	</script>
+</body>
+</html>
