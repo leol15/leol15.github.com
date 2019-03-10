@@ -1,0 +1,122 @@
+body {
+	text-align: center;
+	line-height: 1.5em;
+	font-size: 1em;
+	margin: 0;
+	font-family: 'Aleo', serif;
+	background-color: rgba(240, 240, 240);
+}
+p {
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+#header {
+	width: 100%;
+	height: 180px;
+	background-color: red;
+}
+#header span {
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+#intro {
+	text-align: left;
+	padding: 20px 80px;
+}
+h1 {
+	margin: 30px 0 30px 0;
+	font-size: 3em;
+	margin-bottom: 60px;
+	border-bottom: 10px solid white;
+	line-height: 1em;
+}
+
+#main {
+	padding: 20px 0;
+	width: 80%;
+	min-width: 300px;
+	margin: auto;
+	background-color: rgba(200, 200, 200, 0.5);
+}
+
+iframe {
+	position: relative;
+	background-color: red;
+	border: 5px solid black;
+	margin: auto;
+}
+
+video {
+	width: 100%;
+}
+
+#column1 {
+	background-color: lightgreen;
+}
+
+#column2 {
+	background-color: cyan;
+	margin-left: 3%;
+}
+
+.verticalC {
+	border-radius: 20px;
+	width: 40%;
+	padding: 0 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	transition: 0.5s ease;
+}
+.verticalC:hover {
+	transform: scale(1.1);
+}
+
+.verticalC h2 {
+	border-bottom: 2px solid white;
+}
+.verticalC h2 a {
+	text-decoration: none;
+	color: black;
+}
+
+.ita {
+	font-style: italic;
+}
+.button {
+
+	transition-duration: 0.5s;
+	background-color: gray;
+	color: white;
+	padding: 10px 20px;
+	font-size: 1.4vw;
+	border-radius: 3px;
+}
+.button:hover {
+	background-color: white;
+	color: black;
+}
+#button {
+
+	transition-duration: 0.5s;
+	background-color: gray;
+	color: white;
+	padding: 10px 20px;
+	font-size: 1.4vw;
+	border-radius: 3px;
+}
+#button:hover {
+	background-color: white;
+	color: black;
+}
+
+img {
+	width: 100%;
+	border: 4px ridge rgb(200, 200, 200);
+	transition: 0.5s ease;
+}
+
+img:hover {
+	transform: scale(1.5);
+}
