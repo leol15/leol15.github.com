@@ -119,4 +119,5 @@ img {
 
 img:hover {
 	transform: scale(1.5);
+	margin: 15% 0;
 }
