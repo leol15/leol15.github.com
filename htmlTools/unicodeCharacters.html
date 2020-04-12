@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<!-- correct JS function closures -->
+<head>
+	<title>Tests</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		body, html {
+			text-align: center;
+			margin: 0;
+			padding: 0;
+		}
+		html {
+			/*overflow-y: scroll;*/
+		}
+		span {
+			font-size: 70px;
+			display: inline-block;
+			width: 90px;
+			height: 90px;
+			text-align: center;
+			border: 1px solid black;
+		}
+		#displayInfo {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+			text-align: center;
+			font-size: calc((50vw + 50vh) / 3);
+			opacity: 0.5;
+		}
+		#displayInfo div {
+			font-size: 10vw;
+		}
+	</style>
+</head>
+<body>
+	<!-- <p>&#x2660</p> -->
+
+	<script type="text/javascript">
+		var showText = function(tag, index) {
+			if (index < 0 || index > count) {
+				tag.innerHTML = index;
+			} else {
+				var temp = (index + position);
+				tag.innerHTML = "&#" + temp + "<div>" + temp.toString(16) + "</div>";
+			}
+			// console.log(tag);
+			// console.log(chars[index]);
+		}
+
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+
+		var count = Math.floor(w/90) * Math.floor(h/90);
+		var position = 33;
+
+		var body = document.body;
+
+		var displayTag = document.createElement("div");
+		displayTag.id = "displayInfo";
+		body.appendChild(displayTag)
+
+		// end of default stuff
+		
+		// chars = [];
+
+		for (var i = 0; i < count; i++) {
+			var span = document.createElement("span");
+			span.id = "span" + i;
+			body.appendChild(span);
+			// chars.push("" + i);
+		}
+
+		
+		for (var i = position; i < position + count; i++) {
+			var span = document.getElementById("span"+(i - position));
+				(function () {
+					span.innerHTML = "&#" + i;
+					var text = "&#" + i + "<div>" + i + "</div>";
+					var tempNum = i - position;
+					span.addEventListener("mouseover", function() {showText(displayTag, tempNum)});
+					span.addEventListener("mouseleave", function() {showText(displayTag, -1)});
+				}()
+				);
+		}
+
+
+
+		document.addEventListener("wheel", function(e) {
+			// console.log(position);
+			if (e.wheelDelta < 0) {
+				position += count;
+			} else if (e.wheelDelta > 0) {
+				position -= count;
+			} else {
+				return;
+			}
+			position = Math.max(position, 0);			
+			for (var i = 0; i < count; i++) {
+				tag = document.getElementById('span' + i);
+				tag.innerHTML = "&#" + (i + position);
+			}
+		});
+
+	</script>
+</body>
+</html>
