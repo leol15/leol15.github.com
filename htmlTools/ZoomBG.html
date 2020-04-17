@@ -3,6 +3,14 @@
 <head>
 	<title>Zooming</title>
 	<style type="text/css">
+
+
+		:root {
+			--circle-size: 160px;
+			--square-size: 160px;
+			--move-dist: 320px;
+		}
+
 		body {
 			animation: bg 10s infinite;
 			animation-direction: alternate;
@@ -10,72 +18,97 @@
 
 		@keyframes bg {
 			0% {background-color: rgb(0, 0, 0)}
-			50% {background-color: rgb(40, 40, 40)}
+			50% {background-color: rgb(0, 0, 0)}
 			100% {background-color: rgb(0, 0, 0)}
 		}
 
+		#AnimationBox {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: calc(var(--move-dist) + var(--square-size));
+			height: calc(var(--move-dist) + var(--square-size));
+			transform: translate(-50%, -50%);
+		}
 
 		#a1 {
 			animation-delay: 0s;
 		}
 		#a2 {
-			animation-delay: 0.8s;
-		}
-		#a3 {
 			animation-delay: 1.6s;
 		}
+		#a3 {
+			animation-delay: 3.2s;
+		}
 		#a4 {
-			animation-delay: 2.4s;
+			animation-delay: 4.8s;
 		}
 
 
 		.mover {
 			position: absolute;
-			top: 100px;
-			left: 200px;
+			top: 0px;
+			left: 0px;
 
-			width: 120px;
-			height: 120px;
-			animation: mymove 3.5s 3;
+			animation: mymove 6.4s infinite;
 			animation-timing-function: cubic-bezier(.6,.01,.4,.99);
 		}
 
 		@keyframes mymove {
 			0% {
+				width: var(--circle-size);
+				height: var(--circle-size);
+				
 				border-radius: 50%;
 				transform: translate(0, 0) rotate(0deg);
 				background-color: red;
 			}			
 
 			25% {
+				width: var(--square-size);
+				height: var(--square-size);
+
 				border-radius: 0;
-				transform: translate(500px, 0) rotate(90deg);
+				transform: translate(var(--move-dist), 0) rotate(90deg);
 				background-color: blue;
 			}
 			50% {
+				width: var(--circle-size);
+				height: var(--circle-size);
+				
 				border-radius: 50%;
-				transform: translate(500px, 500px) rotate(180deg);
-				background-color: green;
+				background-color: yellow;
+				transform: translate(var(--move-dist), var(--move-dist)) rotate(180deg);
 			}
 			75% {
+				width: var(--square-size);
+				height: var(--square-size);
+
 				border-radius: 0;
-				transform: translate(0, 500px) rotate(270deg);
-				background-color: yellow;
+				transform: translate(0, var(--move-dist)) rotate(270deg);
+				background-color: green;
 			}
 			
 			100% {
+				width: var(--circle-size);
+				height: var(--circle-size);
+				
 				border-radius: 50%;
 				transform: translate(0, 0) rotate(360deg);
 				background-color: red;
 			}
 		}
+
 	</style>
 </head>
 <body>
-	<div id="a1" class="mover"></div>
-	<div id="a2" class="mover"></div>
-	<div id="a3" class="mover"></div>
-	<div id="a4" class="mover"></div>
+	<div id="AnimationBox">
+		<div id="a1" class="mover"></div>
+		<div id="a2" class="mover"></div>
+		<div id="a3" class="mover"></div>
+		<div id="a4" class="mover"></div>
+		
+	</div>
 
 </body>
 </html>
