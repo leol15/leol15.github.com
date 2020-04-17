@@ -31,6 +31,24 @@
 			transform: translate(-50%, -50%);
 		}
 
+		#message {
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) scale(-1, 1);
+			text-align: center;
+			color: white;
+			font-size: 30px;
+			z-index: -1;
+			animation: message 1.6s infinite; /*8*/
+			animation-delay: 0.8s;
+		}
+		@keyframes message {
+			0% { filter: blur(5px); }
+			50% { filter: blur(0); }
+			100% { filter: blur(5px); }
+		}
+
 		#a1 {
 			animation-delay: 0s;
 		}
@@ -50,7 +68,7 @@
 			top: 0px;
 			left: 0px;
 
-			animation: mymove 6.4s infinite;
+			animation: mymove 6.4s infinite; /*2*/
 			animation-timing-function: cubic-bezier(.6,.01,.4,.99);
 		}
 
@@ -107,7 +125,7 @@
 		<div id="a2" class="mover"></div>
 		<div id="a3" class="mover"></div>
 		<div id="a4" class="mover"></div>
-		
+		<div id="message">Away for a bit!</div>
 	</div>
 
 </body>
