@@ -9,7 +9,7 @@ var link = document.createElement('link');
 // set the attributes for link element  
 link.rel = 'stylesheet';  
 link.type = 'text/css'; 
-link.href = 'fab.css';  
+link.href = 'https://leol15.github.io/util/fab.css';  
 // Append link element to HTML head 
 head.appendChild(link);  
 
