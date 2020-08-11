@@ -5,37 +5,122 @@ permalink: /404.html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UR@theDesert</title>
+	<title>You are lost?</title>
 	<meta charset="utf-8">
 	<style type="text/css">
 		body, html {
 			margin: 0;
 		}
-		div {
-			transform: translateY(50%);
+
+		:root {
+		  --main-bg-color: brown;
+		}
+		
+		body {
+			width: 100vw;
+			height: 100vh;
+		}
+
+		#warning_text {
+			background-image: url("https://data.arab48.com/data/news/2017/09/13/Croped/20170913090201.jpg");
+			position: absolute;
+			bottom: 0%;
+			right: 0%;
 			text-align: center;
 			text-shadow: 2px 3px 4px black;
 			font-family: sans-serif;
 			color: white;
-			background-color: rgba(220, 220, 220, 0.4);
-			margin: auto;
-			width: 350px;
-			height: 350px;
 			padding: 20px 20px 20px 20px;
+			border-radius: 50px;
+		}
+
+		#clock {
+			width: 40vw;
+			height: 40vw;
+			position: relative;
 			border-radius: 50%;
 		}
-		body {
-			width: 100vw;
-			height: 100vh;
-			background-image: url("https://data.arab48.com/data/news/2017/09/13/Croped/20170913090201.jpg");
-			background-position: fixed;	
-			background-size: 100% 100%;
-			background-repeat: no-repeat;
+
+		.clock_hands {
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+
 		}
+
+		.hand {
+			user-select: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			color: black;
+			text-shadow: 0 0 5px white;
+			line-height: 0;
+			/*transform: translateX(-50%);*/
+			transition: all 1s;
+			transition-timing-function: cubic-bezier(0,1.32,.9,1.05);
+			color: black;  /* Fallback: assume this color ON TOP of image */
+
+			background: url("https://data.arab48.com/data/news/2017/09/13/Croped/20170913090201.jpg") no-repeat;
+		   	-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+
+		.second {
+			font-size: 1200%;
+		}
+		.minute {
+			font-size: 800%;
+		}
+		.hour {
+			font-size: 400%;
+		}
+
+		.clock_hands:hover .hand:nth-child(1) {
+			transform: translateX(-50%) rotate(360deg);
+		}
+
+		.marker {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 50%;
+			transform-origin: 0 0;
+		}
+
+		.marker span {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 10px;
+			height: 10px;
+			transform: translateX(-50%);
+			border-radius: 50%;
+			background-color: black;
+			box-shadow: inset 0px 0px 2px red;
+		}
+
+		.marker:nth-child(1) {transform: rotate(30deg) translateX(-50%)}
+		.marker:nth-child(2) {transform: rotate(60deg) translateX(-50%)}
+		.marker:nth-child(3) {transform: rotate(90deg) translateX(-50%)}
+		.marker:nth-child(4) {transform: rotate(120deg) translateX(-50%)}
+		.marker:nth-child(5) {transform: rotate(150deg) translateX(-50%)}
+		.marker:nth-child(6) {transform: rotate(180deg) translateX(-50%)}
+		.marker:nth-child(7) {transform: rotate(210deg) translateX(-50%)}
+		.marker:nth-child(8) {transform: rotate(240deg) translateX(-50%)}
+		.marker:nth-child(9) {transform: rotate(270deg) translateX(-50%)}
+		.marker:nth-child(10) {transform: rotate(300deg) translateX(-50%)}
+		.marker:nth-child(11) {transform: rotate(330deg) translateX(-50%)}
+		.marker:nth-child(12) {transform: rotate(360deg) translateX(-50%)}
+
+
 	</style>
 </head>
 <body>
-	<div>
+
+
+
+	<div id="warning_text">
 		<h1>Sorry!!!</h1>
 		<h2>You have arrived at an undeveloped area~</h2>
 		<h3>With an endless span of <strong>sandieses...</strong></h3>
@@ -43,5 +128,78 @@ permalink: /404.html
 		<h5>please turn back now!</h5>
 		<h6>Before the terriblians arrive...</h6>
 	</div>
+
+
+	<div id="clock">
+		<div class="clock_face">
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+			<div class="marker"><span></span></div>
+		</div>
+		<div class="clock_hands">
+			<div class="hand minute">†</div>
+			<div class="hand second">†</div>
+			<div class="hand hour">†</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+
+		display = true;
+
+		var mHand = document.getElementsByClassName("minute")[0];
+		var sHand = document.getElementsByClassName("second")[0];
+		var hHand = document.getElementsByClassName("hour")[0];
+
+		document.getElementById('clock').addEventListener("click", function() {
+			sHand.innerHTML = "&#" + Math.floor(Math.random() * 10000 + 1);
+			mHand.innerHTML = "&#" + Math.floor(Math.random() * 10000 + 1);
+		});
+		// get time
+		
+		let getTimeArr = function() {
+			var d = new Date();
+			var re = [d.getHours(), d.getMinutes(), d.getSeconds()];
+			re[1] = re[1] + re[2] / 60;
+			re[0] = re[0] + re[1] / 60;
+			return re;
+		}
+
+		var times = getTimeArr();
+		var startTime = function() {
+			// display and increment
+			if (display === false) return;
+			hHand.style.transform = "translateX(-50%) rotate(" + 
+				(times[0]*30 - 180) + "deg)";
+			mHand.style.transform = "translateX(-50%) rotate(" + 
+				(times[1]*6 - 180) + "deg)";
+			sHand.style.transform = "translateX(-50%) rotate(" + 
+				(times[2]*6 - 180) + "deg)";
+			// increment
+			times[0] = times[0] + 1 / 3600;
+			times[1] = times[1] + 1 / 60;
+			times[2]++;
+		}
+
+		startTime();
+		setInterval(startTime, 1000);
+
+
+
+	</script>
 </body>
 </html>
+
+
+
