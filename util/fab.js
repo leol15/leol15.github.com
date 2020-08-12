@@ -9,7 +9,12 @@ var link = document.createElement('link');
 // set the attributes for link element  
 link.rel = 'stylesheet';  
 link.type = 'text/css'; 
-link.href = 'https://leol15.github.io/util/fab.css';  
+// local or global linking?
+if (window.location.pathname.includes("C:/")) {
+	link.href = 'util/fab.css';  
+} else {
+	link.href = 'https://leol15.github.io/util/fab.css';
+}
 // Append link element to HTML head 
 head.appendChild(link);  
 
@@ -25,34 +30,63 @@ head.appendChild(link);
 
 // create html
  
-var el = document.createElement("a");
-el.id = "linked_fab_container";
-el.href = "#";
-el.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+var fab_box = document.createElement("span");
+fab_box.id = "linked_fab_container";
+// fab_box.href = "#";
 
+var main_circle = document.createElement("div");
+main_circle.id = "linked_fab_circle";
+main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+
+fab_box.appendChild(main_circle);
 
 // hint text
-var hint = document.createElement("span");
+var hint = document.createElement("input");
 hint.id = "linked_fab_hint";
-hint.innerText = "send some feedback";
+hint.placeholder = "send some feedback";
 
-el.appendChild(hint);
+fab_box.appendChild(hint);
 
-document.body.appendChild(el);
+document.body.appendChild(fab_box);
 
+
+// interaction
+var toggleFunction = function() {
+	if (hint.value !== "") {
+		// sending 
+		sendMessage();
+	} 
+}
+
+
+// send feeback
+var sendMessage = function() {
+	console.log("sended");  // some how
+	
+	hint.value = "";
+	hint.placeholder = "thank you for your feedback!";	
+	main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">done_outline</i>";
+	setTimeout(function() {
+		main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+	}, 5000);
+
+}
 
 // listener
 
-el.addEventListener("click", function() {
-	console.log("cloud_pic");
+main_circle.addEventListener("click", function() {
+	toggleFunction();
 });
 
 
-el.addEventListener("mousedown", function() {
-	el.style.backgroundColor = "red";
-});
-
-
-el.addEventListener("mouseup", function() {
-	el.style.backgroundColor = "rgba(100, 255, 100, 0.5)";
+hint.addEventListener("keyup", function(e) {
+	if (hint.value.length === 0) {
+		main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+	} else {
+		main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">send</i>";
+		if (e.key === 'Enter' || e.keyCode === 13) {
+			// sendMessage();
+			sendMessage();
+		}
+	}
 });
