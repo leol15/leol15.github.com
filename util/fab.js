@@ -64,7 +64,7 @@ var sendMessage = function() {
 	console.log("sended");  // some how
 	
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "http://students.washington.edu/leol15/home/feedback.php", true);
+	xhr.open("POST", "https://students.washington.edu/leol15/home/feedback.php", true);
 	xhr.setRequestHeader('Content-Type', 'application/text');
 	xhr.send(JSON.stringify({
 	    feedback: hint.value
