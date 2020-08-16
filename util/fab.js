@@ -65,9 +65,9 @@ var sendMessage = function() {
 	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://students.washington.edu/leol15/home/feedback.php", true);
-	xhr.setRequestHeader('Content-Type', 'application/text');
+	xhr.setRequestHeader('Content-Type', 'text/plain');
 	xhr.send(JSON.stringify({
-	    feedback: hint.value
+	    "feedback": hint.value
 	}));
 
 	hint.value = "";
