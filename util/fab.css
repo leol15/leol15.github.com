@@ -3,8 +3,8 @@
 	z-index: 20;
 	position: fixed;
 	display: inline-block;
-	right: 48px;
-	bottom: 48px;
+	right: min(4vw, 38px);
+	bottom: min(3vw, 28px);
 	user-select: none;
 	transition: all 0.5s;
 }
