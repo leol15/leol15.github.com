@@ -61,22 +61,36 @@ var toggleFunction = function() {
 
 // send feeback
 var sendMessage = function() {
-	console.log("sended");  // some how
+	// loading animation
+	main_circle.className = "linked_fab_sending";
 	
+	// send via xml
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://students.washington.edu/leol15/home/feedback.php", true);
 	xhr.setRequestHeader('Content-Type', 'text/plain');
-	xhr.send(JSON.stringify({
-	    "feedback": hint.value
-	}));
-
-	hint.value = "";
-	hint.placeholder = "thank you for your feedback!";	
-	main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">done_outline</i>";
-	setTimeout(function() {
-		main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
-	}, 5000);
-
+	xhr.onreadystatechange = function() {
+		if (this.readyState === 4 && this.status === 200) {
+			// sent success
+			setTimeout(function() {
+	    		main_circle.className = '';
+				hint.value = "";
+				hint.placeholder = xhr.response;	
+				main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">done_outline</i>";
+				setTimeout(function() {
+					main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+				}, 5000);
+			}, 500);
+			// some loading animation
+    	} else if (this.readyState === 0) {
+			// error
+    		console.log(this.readyState);
+    		console.log(this.status);
+    		console.log("server could be down");
+			main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+    	}
+	};
+	var prefix = window.location + "\n";
+	xhr.send(prefix + hint.value);
 }
 
 // listener

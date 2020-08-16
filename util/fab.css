@@ -1,4 +1,5 @@
 #linked_fab_container {
+
 	z-index: 20;
 	position: fixed;
 	display: inline-block;
@@ -20,6 +21,7 @@
 	transition: all 0.2s;
 	text-align: center;
 	overflow: hidden;
+
 }
 
 #linked_fab_circle:before {
@@ -41,6 +43,7 @@
 	background-color: transparent;
 	transition: all 1s;
 }
+
 
 
 #linked_fab_circle:hover {
@@ -122,7 +125,39 @@
 	}
 }
 
+.linked_fab_sending:after {
+	content: "";
+	z-index: 19;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-left: 5px solid white;
+	border-right: 5px solid white;
+	border-radius: inherit;
+	box-sizing: border-box;
+	animation: sending_animation 1.7s linear infinite;
+	/*transition: all 1s;*/
+}
 
+@keyframes sending_animation {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(360deg);
+	}
+	50% {
+		transform: rotate(480deg);
+	}
+	75% {
+		transform: rotate(960deg);
+	}
+	100% {
+		transform: rotate(1440deg);
+	}
+}
 
 
 
