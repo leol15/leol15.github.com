@@ -63,6 +63,13 @@ var toggleFunction = function() {
 var sendMessage = function() {
 	console.log("sended");  // some how
 	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://students.washington.edu/leol15/home/feedback.php", true);
+	xhr.setRequestHeader('Content-Type', 'application/text');
+	xhr.send(JSON.stringify({
+	    feedback: hint.value
+	}));
+
 	hint.value = "";
 	hint.placeholder = "thank you for your feedback!";	
 	main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">done_outline</i>";
@@ -81,7 +88,11 @@ main_circle.addEventListener("click", function() {
 
 hint.addEventListener("keyup", function(e) {
 	if (hint.value.length === 0) {
-		main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+		if (e.keyCode === 13 || e.key === "Enter") {
+
+		} else {
+			main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">forward_to_inbox</i>";
+		}
 	} else {
 		main_circle.innerHTML = "<i id=\"linked_fab_icon\" class=\"material-icons\">send</i>";
 		if (e.key === 'Enter' || e.keyCode === 13) {

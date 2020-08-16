@@ -63,11 +63,11 @@
 }
 
 #linked_fab_circle:hover + #linked_fab_hint {
-	transition-delay: 0.1s;
 	transform: translate(-110%, -50%);
 	opacity: 1;
 	max-width: 100vw;
 	padding: 10px;
+	transition-delay: 0.1s;
 }
 
 #linked_fab_hint:hover, #linked_fab_hint:focus {
@@ -75,7 +75,7 @@
 	opacity: 1;
 	max-width: 100vw;
 	padding: 20px;	
-	transition-delay: 0;
+	transition-delay: 0.02s;
 }
 
 #linked_fab_icon {
