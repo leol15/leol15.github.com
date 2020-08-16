@@ -115,3 +115,9 @@ hint.addEventListener("keyup", function(e) {
 		}
 	}
 });
+
+
+// now add style to show after
+setTimeout(function() {
+	hint.style.transitionDelay = "0.7s";
+}, 1000);
