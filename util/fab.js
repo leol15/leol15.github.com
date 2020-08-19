@@ -66,7 +66,7 @@ var sendMessage = function() {
 	
 	// send via xml
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "https://students.washington.edu/leol15/util/feedback.php", true);
+	xhr.open("POST", "https://homes.cs.washington.edu/~leol15/util/feedback.php", true);
 	xhr.setRequestHeader('Content-Type', 'text/plain');
 	xhr.onreadystatechange = function() {
 		if (this.readyState === 4 && this.status === 200) {
